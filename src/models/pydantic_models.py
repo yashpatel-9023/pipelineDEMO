@@ -1,0 +1,68 @@
+# src/models/pydantic_models.py
+"""Convenience re-exports of the core Pydantic domain models.
+
+Other modules can ``from src.models.pydantic_models import SummaryResponse``
+without needing to know the internal ``domain.py`` path.
+"""
+
+from src.models.domain import (  # noqa: F401
+    AiEligibilityItem,
+    AnnexureFileResult,
+    AnnexureListingBody,
+    AnnexureListingResponse,
+    AnnexureResultData,
+    AnnexureTemplate,
+    AutofillResponse,
+    CompanyEligibilityDetails,
+    CompanyProfile,
+    EligibilityDataItem,
+    EligibilityResult,
+    FilledAnnexure,
+    FinalAIResponseBlock,
+    FinalAIResponseItem,
+    FinalBidResponse,
+    FinalResponseDataItem,
+    PipelineRun,
+    PipelineStatus,
+    PipelineStep,
+    StepStatus,
+    SummaryData,
+    SummaryJson,
+    SummaryResponse,
+    SummaryResultItem,
+    TemplateGenerationResponse,
+    TemplateGenerationResult,
+    TemplateGenerationSummary,
+    Tender,
+)
+
+__all__ = [
+    "AiEligibilityItem",
+    "AnnexureFileResult",
+    "AnnexureListingBody",
+    "AnnexureListingResponse",
+    "AnnexureResultData",
+    "AnnexureTemplate",
+    "AutofillResponse",
+    "CompanyEligibilityDetails",
+    "CompanyProfile",
+    "EligibilityDataItem",
+    "EligibilityResult",
+    "FilledAnnexure",
+    "FinalAIResponseBlock",
+    "FinalAIResponseItem",
+    "FinalBidResponse",
+    "FinalResponseDataItem",
+    "PipelineRun",
+    "PipelineStatus",
+    "PipelineStep",
+    "StepStatus",
+    "SummaryData",
+    "SummaryJson",
+    "SummaryResponse",
+    "SummaryResultItem",
+    "TemplateGenerationResponse",
+    "TemplateGenerationResult",
+    "TemplateGenerationSummary",
+    "Tender",
+]
