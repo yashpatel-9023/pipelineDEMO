@@ -15,6 +15,7 @@ from src.db.repository import (
     create_pipeline_run,
     get_pipeline_run_by_workflow_id,
 )
+from temporalio.exceptions import WorkflowAlreadyStartedError, WorkflowQueryFailedError
 from src.orchestration.temporal_client import create_temporal_client, start_pipeline
 
 router = APIRouter(prefix="/pipeline", tags=["pipeline"])
@@ -51,10 +52,15 @@ async def get_pipeline_status(
     handle = client.get_workflow_handle(workflow_id)
     try:
         status_response = await handle.query("status")
-    except Exception as exc:
+    except WorkflowQueryFailedError as exc:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Workflow {workflow_id} not found or query failed: {exc}",
+            detail=f"Workflow {workflow_id} status query failed: {exc}",
+        )
+    except Exception as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An unexpected error occurred while querying workflow {workflow_id}: {exc}",
         )
 
     return PipelineStatusResponse(**status_response)

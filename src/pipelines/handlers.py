@@ -20,7 +20,7 @@ from src.cache.cache_keys import (
     eligibility_key,
     summary_key,
 )
-from src.cache.redis_client import get_redis_cache
+from src.cache.service import get_cache_service
 from src.core.logging import get_logger
 from src.orchestration.activities import (
     autofill_template,
@@ -38,10 +38,10 @@ logger = get_logger(__name__)
 async def handle_summary(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Fetch tender summary with cache read-through."""
     tender_id = payload.get("tender_id", "unknown")
-    cache = get_redis_cache()
+    cache_service = get_cache_service()
     cache_key = summary_key(tender_id)
 
-    cached = await cache.get_json(cache_key)
+    cached = await cache_service.get(cache_key)
     if cached:
         logger.info("Cache HIT for summary", extra={"tender_id": tender_id})
         return cached
@@ -51,7 +51,7 @@ async def handle_summary(payload: Dict[str, Any]) -> Dict[str, Any]:
     duration = int((time.monotonic() - start) * 1000)
     logger.info("Summary fetched", extra={"tender_id": tender_id, "duration_ms": duration})
 
-    await cache.set_json(cache_key, result)
+    await cache_service.set(cache_key, result)
     return result
 
 
@@ -59,10 +59,10 @@ async def handle_eligibility(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Evaluate eligibility with cache read-through."""
     tender_id = payload.get("tender_id", "unknown")
     company_id = payload.get("company_id", "unknown")
-    cache = get_redis_cache()
+    cache_service = get_cache_service()
     cache_key = eligibility_key(tender_id, company_id)
 
-    cached = await cache.get_json(cache_key)
+    cached = await cache_service.get(cache_key)
     if cached:
         logger.info("Cache HIT for eligibility", extra={"tender_id": tender_id, "company_id": company_id})
         return cached
@@ -72,17 +72,17 @@ async def handle_eligibility(payload: Dict[str, Any]) -> Dict[str, Any]:
     duration = int((time.monotonic() - start) * 1000)
     logger.info("Eligibility evaluated", extra={"tender_id": tender_id, "duration_ms": duration})
 
-    await cache.set_json(cache_key, result, ttl=7200)  # 2-hour cache for eligibility
+    await cache_service.set(cache_key, result, ttl=7200)  # 2-hour cache for eligibility
     return result
 
 
 async def handle_annexure_listing(payload: Dict[str, Any]) -> Dict[str, Any]:
     """List annexures with cache read-through."""
     tender_id = payload.get("tender_id", "unknown")
-    cache = get_redis_cache()
+    cache_service = get_cache_service()
     cache_key = annexure_listing_key(tender_id)
 
-    cached = await cache.get_json(cache_key)
+    cached = await cache_service.get(cache_key)
     if cached:
         logger.info("Cache HIT for annexure listing", extra={"tender_id": tender_id})
         return cached
@@ -92,7 +92,7 @@ async def handle_annexure_listing(payload: Dict[str, Any]) -> Dict[str, Any]:
     duration = int((time.monotonic() - start) * 1000)
     logger.info("Annexures listed", extra={"tender_id": tender_id, "duration_ms": duration})
 
-    await cache.set_json(cache_key, result)
+    await cache_service.set(cache_key, result)
     return result
 
 
