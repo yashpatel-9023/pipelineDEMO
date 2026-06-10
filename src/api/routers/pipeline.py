@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from src.api.dependencies import get_db
+from src.api.dependencies import get_db, get_current_user
 from src.api.schemas import (
     AnnexureSelectionRequest,
     PipelineStartRequest,
@@ -21,6 +21,7 @@ router = APIRouter(prefix="/pipeline", tags=["pipeline"])
 async def start_pipeline_route(
     request: PipelineStartRequest,
     db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
 ) -> PipelineStartResponse:
     handle = await start_pipeline(request.model_dump())
     pipeline_run = PipelineRun(
@@ -45,6 +46,7 @@ async def start_pipeline_route(
 async def get_pipeline_status(
     workflow_id: str,
     db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
 ) -> PipelineStatusResponse:
     client = await create_temporal_client()
     handle = client.get_workflow_handle(workflow_id)
@@ -64,6 +66,7 @@ async def resume_pipeline(
     workflow_id: str,
     request: AnnexureSelectionRequest,
     db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
 ) -> ResumePipelineResponse:
     client = await create_temporal_client()
     handle = client.get_workflow_handle(workflow_id)

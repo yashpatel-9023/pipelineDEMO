@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from src.api.dependencies import get_db
+from src.api.dependencies import get_db, get_current_user
 from src.api.schemas import ApprovalDecisionRequest, ApprovalDecisionResponse
 from src.db.models import PipelineApproval, PipelineRun, PipelineStep
 
@@ -15,6 +15,7 @@ async def submit_approval(
     workflow_id: str,
     request: ApprovalDecisionRequest,
     db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
 ) -> ApprovalDecisionResponse:
     pipeline_run = db.query(PipelineRun).filter(PipelineRun.workflow_id == workflow_id).first()
     if not pipeline_run:

@@ -7,3 +7,7 @@ httpx==0.28.1
 temporalio==1.28.0
 redis==8.0.0
 pydantic-settings==2.14.1
+python-jose[cryptography]==3.5.0
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2
+python-multipart==0.0.32

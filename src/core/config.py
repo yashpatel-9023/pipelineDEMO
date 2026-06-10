@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
     LOG_LEVEL: str = "INFO"
     DEBUG: bool = False
+    SECRET_KEY: str = "insecure-default-secret-change-me-in-production"
 
     # ── Database ─────────────────────────────────────────────────────────
     DATABASE_URL: str = (

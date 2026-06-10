@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from src.api.dependencies import get_db
+from src.api.dependencies import get_db, get_current_user
 from src.api.schemas import DocumentUploadRequest, DocumentUploadResponse
 from src.db.models import Document
 
@@ -14,6 +14,7 @@ router = APIRouter(prefix="/documents", tags=["documents"])
 async def upload_document(
     request: DocumentUploadRequest,
     db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
 ) -> DocumentUploadResponse:
     document = Document(
         tender_id=request.tender_id,
