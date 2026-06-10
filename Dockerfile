@@ -17,4 +17,5 @@ RUN chmod +x scripts/entrypoint.sh
 EXPOSE 8000
 
 ENTRYPOINT ["/bin/bash", "scripts/entrypoint.sh"]
-CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Production-grade CMD with multiple workers
+CMD ["gunicorn", "src.api.main:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000"]

@@ -10,6 +10,10 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 
 from src.core.security import create_access_token, verify_password
+from src.db.base import engine
+from src.cache.redis_client import get_redis_client
+from sqlalchemy import text
+
 
 
 from .routers.approvals import router as approvals_router
@@ -45,6 +49,35 @@ app.add_middleware(
 MOCK_USERS = {
     "admin": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6L6s57WyHYyJBNcu"  # hash for "password123"
 }
+
+
+@app.get("/healthz")
+async def health_check():
+    """Deep health check for API, DB, and Redis."""
+    health_status = {"status": "healthy", "checks": {}}
+    
+    # Check Database
+    try:
+        with engine.connect() as connection:
+            connection.execute(text("SELECT 1"))
+        health_status["checks"]["database"] = "up"
+    except Exception as exc:
+        health_status["status"] = "unhealthy"
+        health_status["checks"]["database"] = f"down: {str(exc)}"
+
+    # Check Redis
+    try:
+        redis = get_redis_client()
+        await redis.client.ping()
+        health_status["checks"]["redis"] = "up"
+    except Exception as exc:
+        health_status["status"] = "unhealthy"
+        health_status["checks"]["redis"] = f"down: {str(exc)}"
+
+    if health_status["status"] != "healthy":
+        raise HTTPException(status_code=503, detail=health_status)
+    
+    return health_status
 
 
 @app.post("/token")
