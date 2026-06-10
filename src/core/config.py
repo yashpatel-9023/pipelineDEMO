@@ -69,4 +69,10 @@ class Settings(BaseSettings):
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
     """Return a cached singleton of the application settings."""
-    return Settings()
+    settings = Settings()
+    # Basic validation for critical production settings
+    if settings.ENVIRONMENT == "production":
+        if settings.SECRET_KEY == "insecure-default-secret-change-me-in-production":
+            raise ValueError("SECRET_KEY must be changed in production environment")
+    return settings
+

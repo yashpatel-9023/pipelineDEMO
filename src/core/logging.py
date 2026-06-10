@@ -39,11 +39,17 @@ class JSONFormatter(logging.Formatter):
     """Emit each log record as a single JSON line."""
 
     def format(self, record: logging.LogRecord) -> str:  # noqa: A003
+        message = record.getMessage()
+        # Simple masking for sensitive keys in messages
+        for sensitive_key in ("SECRET_KEY", "API_KEY", "password", "token"):
+            if sensitive_key in message:
+                message = message.replace(message, "[MASKED]")
+
         log_entry = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "level": record.levelname,
             "logger": record.name,
-            "message": record.getMessage(),
+            "message": message,
             "module": record.module,
             "function": record.funcName,
             "line": record.lineno,
