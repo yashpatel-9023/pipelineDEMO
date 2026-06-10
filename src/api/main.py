@@ -30,7 +30,14 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
-        response.headers["Content-Security-Policy"] = "default-src 'self'"
+        # Allow Swagger UI assets from CDN and local inline scripts/styles
+        csp_directives = [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' cdn.jsdelivr.net",
+            "style-src 'self' 'unsafe-inline' cdn.jsdelivr.net",
+            "img-src 'self' data: fastapi.tiangolo.com",
+        ]
+        response.headers["Content-Security-Policy"] = "; ".join(csp_directives)
         return response
 
 app.add_middleware(SecurityHeadersMiddleware)
