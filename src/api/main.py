@@ -54,7 +54,7 @@ app.add_middleware(
 
 # Mock user for demonstration (In production, this would be in the DB)
 MOCK_USERS = {
-    "admin": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6L6s57WyHYyJBNcu"  # hash for "password123"
+    "admin": "$2b$12$h1Cqij8pFwD5fBJ7VOg57ubsG4I8qxEgAeT1rB3y6U/pvWPRLqiVy"  # hash for "password123"
 }
 
 
