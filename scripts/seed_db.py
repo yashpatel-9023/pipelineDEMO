@@ -56,14 +56,14 @@ def _load_tender_metadata() -> dict:
         "item_count": item_count,
     }
 
-def seed() -> None:
+def seed(company_name: str = "Drone Solutions Pvt. Ltd.", tender_ref: str = None) -> None:
     engine = create_engine(DATABASE_URL, future=True)
     SessionLocal = sessionmaker(bind=engine, expire_on_commit=False, class_=Session)
 
     with SessionLocal() as db:
         # Skip if a company already exists (avoid duplicate seed runs)
-        if db.query(Company).first():
-            print("Database already seeded – skipping.")
+        if db.query(Company).filter(Company.name == company_name).first():
+            print(f"Company {company_name} already seeded – skipping.")
             return
 
         # ---- Company ----
@@ -121,4 +121,9 @@ def seed() -> None:
         print("\nSeed data committed successfully.")
 
 if __name__ == "__main__":
-    seed()
+    import argparse
+    parser = argparse.ArgumentParser(description="Seed the database.")
+    parser.add_argument("--company", type=str, default="Drone Solutions Pvt. Ltd.", help="Company name")
+    parser.add_argument("--tender", type=str, help="Tender reference")
+    args = parser.parse_args()
+    seed(company_name=args.company, tender_ref=args.tender)

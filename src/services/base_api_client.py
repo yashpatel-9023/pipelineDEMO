@@ -5,6 +5,7 @@ import asyncio
 from typing import Any, Dict, Optional
 
 import httpx
+from src.core.logging import get_correlation_id
 
 
 class ApiServiceError(Exception):
@@ -32,6 +33,10 @@ class BaseApiClient:
         }
         if api_key:
             self.headers["Authorization"] = f"Bearer {api_key}"
+        
+        cid = get_correlation_id()
+        if cid:
+            self.headers["X-Correlation-ID"] = cid
 
     async def _request(
         self,

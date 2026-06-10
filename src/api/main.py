@@ -105,6 +105,4 @@ app.include_router(documents_router)
 app.include_router(approvals_router)
 
 
-@app.get("/healthz")
-def health_check() -> dict[str, str]:
-    return {"status": "ok"}
+
