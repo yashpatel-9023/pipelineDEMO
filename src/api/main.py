@@ -11,7 +11,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from src.core.security import create_access_token, verify_password
 from src.db.base import engine
-from src.cache.redis_client import get_redis_client
+from src.cache.redis_client import get_redis_cache
 from sqlalchemy import text
 
 
@@ -67,9 +67,12 @@ async def health_check():
 
     # Check Redis
     try:
-        redis = get_redis_client()
-        await redis.client.ping()
-        health_status["checks"]["redis"] = "up"
+        cache = get_redis_cache()
+        if await cache.ping():
+            health_status["checks"]["redis"] = "up"
+        else:
+            health_status["status"] = "unhealthy"
+            health_status["checks"]["redis"] = "down: ping failed"
     except Exception as exc:
         health_status["status"] = "unhealthy"
         health_status["checks"]["redis"] = f"down: {str(exc)}"
