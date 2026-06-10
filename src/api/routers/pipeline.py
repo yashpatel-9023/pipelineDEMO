@@ -11,7 +11,10 @@ from src.api.schemas import (
     PipelineStatusResponse,
     ResumePipelineResponse,
 )
-from src.db.models import PipelineRun
+from src.db.repository import (
+    create_pipeline_run,
+    get_pipeline_run_by_workflow_id,
+)
 from src.orchestration.temporal_client import create_temporal_client, start_pipeline
 
 router = APIRouter(prefix="/pipeline", tags=["pipeline"])
@@ -24,20 +27,16 @@ async def start_pipeline_route(
     current_user: str = Depends(get_current_user),
 ) -> PipelineStartResponse:
     handle = await start_pipeline(request.model_dump())
-    pipeline_run = PipelineRun(
+    create_pipeline_run(
+        db,
         tender_id=request.tender_id,
         company_id=request.company_id,
         workflow_id=handle.id,
-        status="running",
-        current_step="started",
         input_payload=request.payload,
         metadata_={
             "selection_signal_timeout_seconds": request.selection_signal_timeout_seconds,
         },
     )
-    db.add(pipeline_run)
-    db.commit()
-    db.refresh(pipeline_run)
 
     return PipelineStartResponse(workflow_id=handle.id, status="started")
 
@@ -78,7 +77,7 @@ async def resume_pipeline(
             detail=f"Unable to resume workflow {workflow_id}: {exc}",
         )
 
-    pipeline_run = db.query(PipelineRun).filter(PipelineRun.workflow_id == workflow_id).first()
+    pipeline_run = get_pipeline_run_by_workflow_id(db, workflow_id)
     if pipeline_run:
         pipeline_run.current_step = "awaiting_selection"
         db.commit()

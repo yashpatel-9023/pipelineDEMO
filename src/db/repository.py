@@ -336,3 +336,84 @@ def create_approval(
     db.commit()
     db.refresh(approval)
     return approval
+
+
+def get_pipeline_step_by_name(
+    db: Session, pipeline_run_id: UUID, step_name: str
+) -> Optional[PipelineStep]:
+    return (
+        db.execute(
+            select(PipelineStep)
+            .where(PipelineStep.pipeline_run_id == pipeline_run_id)
+            .where(PipelineStep.step_name == step_name)
+        )
+        .scalars()
+        .first()
+    )
+
+
+# ── Annexure ─────────────────────────────────────────────────────────────
+
+def create_annexure(
+    db: Session,
+    *,
+    tender_id: UUID,
+    title: str,
+    annexure_number: Optional[str] = None,
+    metadata_: Optional[Dict[str, Any]] = None,
+) -> Annexure:
+    annexure = Annexure(
+        tender_id=tender_id,
+        title=title,
+        annexure_number=annexure_number,
+        metadata_=metadata_ or {},
+    )
+    db.add(annexure)
+    db.commit()
+    db.refresh(annexure)
+    return annexure
+
+
+def create_filled_annexure(
+    db: Session,
+    *,
+    annexure_id: UUID,
+    pipeline_run_id: UUID,
+    filled_data: Dict[str, Any],
+    storage_path: Optional[str] = None,
+) -> FilledAnnexure:
+    filled = FilledAnnexure(
+        annexure_id=annexure_id,
+        pipeline_run_id=pipeline_run_id,
+        filled_data=filled_data,
+        storage_path=storage_path,
+        filled_at=datetime.now(timezone.utc),
+    )
+    db.add(filled)
+    db.commit()
+    db.refresh(filled)
+    return filled
+
+
+# ── Bidding Document ─────────────────────────────────────────────────────
+
+def create_bidding_document(
+    db: Session,
+    *,
+    pipeline_run_id: UUID,
+    document_name: str,
+    storage_path: str,
+    metadata_: Optional[Dict[str, Any]] = None,
+) -> BiddingDocument:
+    doc = BiddingDocument(
+        pipeline_run_id=pipeline_run_id,
+        document_name=document_name,
+        storage_path=storage_path,
+        metadata_=metadata_ or {},
+        generated_at=datetime.now(timezone.utc),
+    )
+    db.add(doc)
+    db.commit()
+    db.refresh(doc)
+    return doc
+

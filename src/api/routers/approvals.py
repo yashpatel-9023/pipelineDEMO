@@ -5,7 +5,11 @@ from sqlalchemy.orm import Session
 
 from src.api.dependencies import get_db, get_current_user
 from src.api.schemas import ApprovalDecisionRequest, ApprovalDecisionResponse
-from src.db.models import PipelineApproval, PipelineRun, PipelineStep
+from src.db.repository import (
+    create_approval,
+    get_pipeline_run_by_workflow_id,
+    get_pipeline_step_by_name,
+)
 
 router = APIRouter(prefix="/approvals", tags=["approvals"])
 
@@ -17,33 +21,32 @@ async def submit_approval(
     db: Session = Depends(get_db),
     current_user: str = Depends(get_current_user),
 ) -> ApprovalDecisionResponse:
-    pipeline_run = db.query(PipelineRun).filter(PipelineRun.workflow_id == workflow_id).first()
+    pipeline_run = get_pipeline_run_by_workflow_id(db, workflow_id)
     if not pipeline_run:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Pipeline run {workflow_id} not found",
         )
 
-    approval = PipelineApproval(
+    step = get_pipeline_step_by_name(db, pipeline_run.id, request.step_name)
+    if not step:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Pipeline step {request.step_name} not found for run {workflow_id}",
+        )
+
+    approval = create_approval(
+        db,
         pipeline_run_id=pipeline_run.id,
-        pipeline_step_id=None,
+        pipeline_step_id=step.id,
         approval_type=request.approval_type,
         actor=request.actor,
         decision=request.decision,
         comments=request.comments,
         payload=request.payload,
     )
-    db.add(approval)
 
-    step = (
-        db.query(PipelineStep)
-        .filter(PipelineStep.pipeline_run_id == pipeline_run.id)
-        .filter(PipelineStep.step_name == request.step_name)
-        .first()
-    )
-    if step:
-        step.status = "approved" if request.decision.lower() == "approve" else "rejected"
-
+    step.status = "approved" if request.decision.lower() == "approve" else "rejected"
     db.commit()
 
     return ApprovalDecisionResponse(
