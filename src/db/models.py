@@ -169,7 +169,6 @@ class PipelineRun(Base):
     pipeline_steps = relationship("PipelineStep", back_populates="pipeline_run")
     approvals = relationship("PipelineApproval", back_populates="pipeline_run")
 
-
 class PipelineStep(Base):
     __tablename__ = "pipeline_steps"
 

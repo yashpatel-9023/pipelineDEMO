@@ -27,6 +27,7 @@ async def main() -> None:
             activities.autofill_template,
             activities.generate_final_response,
             activities.notify_human_for_annexure_selection,
+            activities.update_final_pipeline_status,
         ],
     )
     await worker.run()

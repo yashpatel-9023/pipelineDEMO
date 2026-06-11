@@ -15,6 +15,7 @@ from .activities import (
     generate_templates,
     list_annexures,
     notify_human_for_annexure_selection,
+    update_final_pipeline_status
 )
 
 
@@ -53,11 +54,15 @@ def _extract_eligibility_score(response: Dict[str, Any]) -> int:
 
 
 def _extract_annexure_codes(listing_response: Dict[str, Any]) -> List[str]:
-    if items := listing_response.get("items"):
-        return [item.get("annexure_id") for item in items if item.get("annexure_id")]
-    if body := listing_response.get("body"):
-        return [item.get("annexure_id") for item in body.get("results", []) if item.get("annexure_id")]
-    return []
+    """Extract annexure IDs from the listing response (nested templates)."""
+    annexure_ids = []
+    for file_result in listing_response.get("results", []):
+        templates = file_result.get("result", {}).get("templates", [])
+        for template in templates:
+            aid = template.get("annexure_id")
+            if aid:
+                annexure_ids.append(aid)
+    return annexure_ids
 
 
 @workflow.defn
@@ -107,6 +112,18 @@ class TenderBidWorkflow:
         eligibility_passed = eligibility_score >= 75
         if not eligibility_passed:
             self.current_status = "failed"
+            await workflow.execute_activity(
+                update_final_pipeline_status,
+                {
+                    "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
+                    "status": "failed",
+                    "result_payload": {
+                        "message": "Eligibility threshold not met",
+                        "score": eligibility_score,
+                    },
+                },
+                **activity_kwargs,
+            )
             return TenderPipelineResult(
                 status="failed",
                 eligibility_score=eligibility_score,
@@ -128,9 +145,11 @@ class TenderBidWorkflow:
         annexure_ids = _extract_annexure_codes(annexure_listing)
         await workflow.execute_activity(
             notify_human_for_annexure_selection,
-            input_data.tender_id,
-            input_data.company_id,
-            annexure_listing.get("items", annexure_listing.get("body", {}).get("results", [])),
+            args=[
+                input_data.tender_id,
+                input_data.company_id,
+                annexure_listing.get("items", annexure_listing.get("body", {}).get("results", [])),
+            ],
             **activity_kwargs,
         )
 
@@ -150,6 +169,7 @@ class TenderBidWorkflow:
             "company_id": input_data.company_id,
             "annexure_ids": selected_ids,
             "context": input_data.payload,
+            "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
         }
         template_response = await workflow.execute_activity(
             generate_templates,
@@ -167,6 +187,7 @@ class TenderBidWorkflow:
                     "company_id": input_data.company_id,
                     "template": template,
                     "context": input_data.payload,
+                    "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
                 },
                 **activity_kwargs,
             )
@@ -180,6 +201,7 @@ class TenderBidWorkflow:
             "annexure_ids": selected_ids,
             "template_response": template_response,
             "autofill_results": autofill_results,
+            "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
         }
 
         final_response = await workflow.execute_activity(
@@ -188,6 +210,21 @@ class TenderBidWorkflow:
             **activity_kwargs,
         )
         self.workflow_state["final_response"] = final_response
+
+        # Update pipeline run status in DB to completed
+        await workflow.execute_activity(
+            update_final_pipeline_status,
+            {
+                "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
+                "status": "completed",
+                "result_payload": {
+                    "eligibility_score": eligibility_score,
+                    "selected_annexures": selected_ids,
+                    "final_response": final_response,
+                },
+            },
+            **activity_kwargs,
+        )
 
         self.current_status = "completed"
         return TenderPipelineResult(

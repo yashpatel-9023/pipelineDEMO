@@ -77,8 +77,9 @@ services:
     volumes:
       - ./src:/app/src
       - "./Drone Company Profile:/app/Drone Company Profile"
-      - "./Drone TenderID-100574982:/app/Drone TenderID-100574982"
+      - "./Drone-TenderID-99896935:/app/Drone-TenderID-99896935"
       - ./scripts:/app/scripts
+      - ./JSONS:/app/JSONS
 
   worker:
     build:
@@ -98,6 +99,7 @@ services:
     volumes:
       - ./src:/app/src
       - ./scripts:/app/scripts
+      - ./JSONS:/app/JSONS
     command: ["python", "-m", "src.workers.temporal_worker"]
 
 volumes:

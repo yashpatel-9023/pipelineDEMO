@@ -359,13 +359,13 @@ def create_annexure(
     *,
     tender_id: UUID,
     title: str,
-    annexure_number: Optional[str] = None,
+    code: Optional[str] = None,
     metadata_: Optional[Dict[str, Any]] = None,
 ) -> Annexure:
     annexure = Annexure(
         tender_id=tender_id,
         title=title,
-        annexure_number=annexure_number,
+        code=code,
         metadata_=metadata_ or {},
     )
     db.add(annexure)
@@ -417,3 +417,98 @@ def create_bidding_document(
     db.refresh(doc)
     return doc
 
+
+# ==========================================================================
+# NEW HELPER FUNCTIONS FOR UPDATING PIPELINE RUN STATUS
+# ==========================================================================
+
+def update_pipeline_run_completed(
+    db: Session,
+    run_id: UUID,
+    result_payload: Dict[str, Any],
+) -> Optional[PipelineRun]:
+    """Set pipeline run status to completed and store the final result."""
+    run = db.get(PipelineRun, run_id)
+    if not run:
+        return None
+    run.status = "completed"
+    run.result_payload = result_payload
+    run.completed_at = datetime.now(timezone.utc)
+    db.commit()
+    db.refresh(run)
+    return run
+
+
+def update_pipeline_run_failed(
+    db: Session,
+    run_id: UUID,
+    error_payload: Dict[str, Any],
+) -> Optional[PipelineRun]:
+    """Set pipeline run status to failed and store error details."""
+    run = db.get(PipelineRun, run_id)
+    if not run:
+        return None
+    run.status = "failed"
+    run.result_payload = error_payload
+    run.completed_at = datetime.now(timezone.utc)
+    db.commit()
+    db.refresh(run)
+    return run
+
+
+# ==========================================================================
+# NEW HELPER FUNCTIONS FOR FILLED ANNEXURES & BIDDING DOCUMENTS
+# (using tender_id and company_id, no pipeline_run_id requirement)
+# ==========================================================================
+
+def create_filled_annexure_with_tender_company(
+    db: Session,
+    *,
+    annexure_id: UUID,
+    tender_id: UUID,
+    company_id: UUID,
+    filled_data: Dict[str, Any],
+    raw_response: Optional[Dict[str, Any]] = None,
+) -> FilledAnnexure:
+    """Create a filled annexure record directly linked to tender and company."""
+    filled = FilledAnnexure(
+        annexure_id=annexure_id,
+        tender_id=tender_id,
+        company_id=company_id,
+        filled_data=filled_data,
+        raw_response=raw_response or {},
+        status="completed",
+        completed_at=datetime.now(timezone.utc),
+    )
+    db.add(filled)
+    db.commit()
+    db.refresh(filled)
+    return filled
+
+
+def create_bidding_document_with_tender_company(
+    db: Session,
+    *,
+    tender_id: UUID,
+    company_id: UUID,
+    document_type: str,
+    title: str,
+    file_path: Optional[str] = None,
+    content_json: Optional[Dict[str, Any]] = None,
+    metadata_: Optional[Dict[str, Any]] = None,
+) -> BiddingDocument:
+    """Create a bidding document record directly linked to tender and company."""
+    doc = BiddingDocument(
+        tender_id=tender_id,
+        company_id=company_id,
+        document_type=document_type,
+        title=title,
+        file_path=file_path,
+        content_json=content_json or {},
+        metadata_=metadata_ or {},
+        status="generated",
+    )
+    db.add(doc)
+    db.commit()
+    db.refresh(doc)
+    return doc

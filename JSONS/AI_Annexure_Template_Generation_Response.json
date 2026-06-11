@@ -1,0 +1,54 @@
+{
+    "status": "success",
+    "operation_id": "DOC_1781159554692",
+    "filename": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf",
+    "templates_requested": 2,
+    "templates_processed": 2,
+    "processing_time": 28.319953441619873,
+    "timestamp": "2026-06-11T12:03:03.012872",
+    "summary": {
+        "total_templates": 2,
+        "successful_splits": 2,
+        "successful_processing": 2,
+        "failed_splits": 0,
+        "failed_processing": 0,
+        "split_time": 0.5811424255371094,
+        "processing_time": 43.823551177978516,
+        "total_time": 28.319953441619873,
+        "success_rate": 100.0
+    },
+    "results": [
+        {
+            "template_title": "DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER",
+            "start_page": 1,
+            "end_page": 1,
+            "split_success": true,
+            "processing_success": true,
+            "split_error": "",
+            "processing_error": "",
+            "html_template": "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title>DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER</title><style> body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.4; margin: 0; padding: 0; background: #fff; color: #000; } .page-content { width: 100%; max-width: 17cm; margin: 0 auto; } .underline-blank { display: inline-block; border-bottom: 1px solid #000; min-width: 3cm; line-height: 1.2; white-space: nowrap; vertical-align: bottom; } </style></head><body><div class=\"page-content\"><p style=\"text-align: left;\">(To be submitted in the company letter head by supplier)</p><p style=\"text-align: center; font-weight: bold;\">DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER</p><p style=\"text-align: left;\">Subject: Public Procurement (Preference to Make in India)</p><p style=\"text-align: justify;\">References: Preference to Make in India including counter offering will be as per the public Procurement (Preference to Make in India, Order 2017, Policy No P-45021/2/2017-PP(BE-II) dated 16 Sep 2020 and P-45021/102/2019-(BE-II)-Part(1)(E-50310) dated 04 Mar 2021.</p><p style=\"text-align: left;\">1. We hereby declare that with reference to above subject and references, we M/s <span class=\"underline-blank\" data-placeholder=\"COMPANY_NAME\">&nbsp;</span> are a (Choose any one as applicable)</p><p style=\"text-align: left;\">(a) \"Class-I local supplier\" meeting the requirement of minimum local content equal to 50% (fifty percent) or more defined in the above government notification for the goods and services.</p><p style=\"text-align: center;\">(OR)</p><p style=\"text-align: left;\">(b) \"Class-II local Supplier\" meeting the requirement of local content 20% to less than 50% (Fifty percent) defined in the above government notification for the goods and services.</p><p style=\"text-align: center;\">(OR)</p><p style=\"text-align: left;\">(c) Non Local Supplier (If not belonging to Class-I &amp; Class-II)</p><p style=\"text-align: left;\">for the product / item as specified in GeM Bid No <span class=\"underline-blank\" data-placeholder=\"GEM_BID_NO\">&nbsp;</span> dated <span class=\"underline-blank\" data-placeholder=\"DATE\">&nbsp;</span>.</p><p style=\"text-align: left;\">2. We further certify that the above declaration is made in compliance with Govt orders issued from time to time and specifically vide Govt of India, Ministry of Commerce and Industry, OM No.P-45021/102/2019-BE-II-Part(1)(E-50310) dated 04 Mar 2021 wherein Services such as Transportation, Insurance, Installation, Commissioning, Training and after Sales Service Support like AMC/CMC etc have not been counted towards calculations of % of local content while classifying the suppliers as Class-I or Class-II.</p><p style=\"text-align: left;\">3. We also understand that the false declarations will be in breach of the code of Integrity under rule 175(1)(i)(h) of the General Financial Rules for which we (bidders &amp; our successors) can be debarred for up to two years as per Rule 151 (iii) of the General Financial Rules along with such other actions as may be permissible under law.</p><p style=\"text-align: left;\">Authorised Signature M/s <span class=\"underline-blank\" data-placeholder=\"AUTHORISED_SIGNATURE_M_S\">&nbsp;</span></p><p style=\"text-align: right;\">(Signature and Seal)</p><p style=\"text-align: left;\">Place : <span class=\"underline-blank\" data-placeholder=\"PLACE\">&nbsp;</span></p><p style=\"text-align: left;\">Date : <span class=\"underline-blank\" data-placeholder=\"DATE\">&nbsp;</span></p></div></body></html>",
+            "split_time": 0.2905712127685547,
+            "processing_time": 16.46962857246399,
+            "total_time": 16.760199785232544,
+            "file_size_mb": 0.53,
+            "tokens_used": 564,
+            "output_filename": "201281730_DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER_pages_1-1.pdf"
+        },
+        {
+            "template_title": "FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025",
+            "start_page": 2,
+            "end_page": 2,
+            "split_success": true,
+            "processing_success": true,
+            "split_error": "",
+            "processing_error": "",
+            "html_template": "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title>FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025</title><style> body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.4; margin: 0; padding: 0; background: #fff; color: #000; } .page-content { width: 100%; max-width: 17cm; margin: 0 auto; } .underline-blank { display: inline-block; border-bottom: 1px solid #000; min-width: 3cm; line-height: 1.2; white-space: nowrap; vertical-align: bottom; } </style></head><body><div class=\"page-content\"><p style=\"text-align: center;\"><strong>FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF<br>INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025</strong></p><p style=\"text-align: left;\">1. A Bidder shall not have conflict of interest with other bidders. Such conflict of interest can lead to anti-competitive practices to the detriment of Buyer's interests. The Bidder found to have a conflict of interest shall be disqualified. A Bidder may be considered to have a conflict of interest with one or more parties in this bidding process, if :-</p><p style=\"text-align: left; margin-left: 0.5in;\">(a) They have controlling partner(s) in common; or</p><p style=\"text-align: left; margin-left: 0.5in;\">(b) They receive or have received any direct or indirect subsidy / financial stake from any of them; or</p><p style=\"text-align: left; margin-left: 0.5in;\">(c) They have the same legal representative/agent for purposes of this Bid; or</p><p style=\"text-align: left; margin-left: 0.5in;\">(d) They have relationship with each other, directly or through common third parties, that puts them in a position to have access to information about or influence on the Bid of another Bidder; or</p><p style=\"text-align: justify; margin-left: 0.5in;\">(e) Bidder participates in more than one Bid in this bidding process. Participation by a Bidder in more than one Bid will result in the disqualification of all bids in which the parties are involved. However, this does not limit the inclusion of components/sub assemblies/ assemblies from one bidding manufacturer in more than one bid.</p><p style=\"text-align: justify; margin-left: 0.5in;\">(f) In cases of agents quoting in offshore procurements, on behalf of their principal manufacturers, one agent cannot represent two manufacturers or quote on their behalf in a particular tender enquiry. One manufacturer can also authorise only one agent/dealer. There can be only one Bid from the following:- (i) The principal manufacturer directly or through one Indian agent on his behalf; and (ii) Indian/ foreign agent on behalf of only one principal</p><p style=\"text-align: justify; margin-left: 0.5in;\">(g) A Bidder or any of its affiliates participated as a consultant in the preparation of the design or technical specifications of the contract that is the subject of the Bid;</p><p style=\"text-align: justify; margin-left: 0.5in;\">(h) In case of a holding company having more than one independent manufacturing unit or more than one unit having common business ownership/ management, only one unit should quote. Similar restrictions would apply to closely related sister companies. Bidders must proactively declare such sister/ common business/ management units in same/ similar line of business</p><p style=\"text-align: left;\">2. I/We certified that we have no conflict of interest as listed at para 1 with any other firms participating in this GeM bid No. <span class=\"underline-blank\" data-placeholder=\"GEM_BID_NO\">&nbsp;</span>. If it is found at any stage necessary action wrt disqualification / cancellation of SO or other action as deemed fit can be undertaken against our firm.</p><p style=\"text-align: left;\">(Name and signature of vendor)</p><p style=\"text-align: left;\">Signature: <span class=\"underline-blank\" data-placeholder=\"SIGNATURE_OF_VENDOR\">&nbsp;</span></p><p style=\"text-align: left;\">Name: <span class=\"underline-blank\" data-placeholder=\"NAME_OF_VENDOR\">&nbsp;</span></p><p style=\"text-align: left;\">Date: <span class=\"underline-blank\" data-placeholder=\"DATE\">&nbsp;</span></p><p style=\"text-align: left;\">Place: <span class=\"underline-blank\" data-placeholder=\"PLACE\">&nbsp;</span></p><p style=\"text-align: left;\">(Seal and Stamp)</p></div></body></html>",
+            "split_time": 0.2905712127685547,
+            "processing_time": 27.353922605514526,
+            "total_time": 27.64449381828308,
+            "file_size_mb": 0.66,
+            "tokens_used": 751,
+            "output_filename": "201281730_FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS_ AGENTS_pages_2-2.pdf"
+        }
+    ]
+}

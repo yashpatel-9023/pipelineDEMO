@@ -1,0 +1,23 @@
+{
+  "filled_template": "<html>...(2344 chars, filled HTML)...</html>",
+  "placeholders_found": [
+    "border: none; padding: 0; vertical-align: top;",
+    "DATE",
+    "width: 100%; max-width: 17cm; margin: 0 auto;",
+    "display: inline-block; border-bottom: 1px solid #000; min-width: 3cm; line-height: 1.2; white-space: nowrap; vertical-align: bottom;",
+    "font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.4; margin: 0; padding: 0; background: #fff; color: #000;",
+    "TENDER_NO",
+    "width: 100%; border-collapse: collapse; border: none; margin-top: 1.5cm;"
+  ],
+  "placeholders_filled": [
+    "border: none; padding: 0; vertical-align: top;",
+    "DATE",
+    "width: 100%; max-width: 17cm; margin: 0 auto;",
+    "display: inline-block; border-bottom: 1px solid #000; min-width: 3cm; line-height: 1.2; white-space: nowrap; vertical-align: bottom;",
+    "font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.4; margin: 0; padding: 0; background: #fff; color: #000;",
+    "TENDER_NO",
+    "width: 100%; border-collapse: collapse; border: none; margin-top: 1.5cm;"
+  ],
+  "placeholders_empty": [],
+  "api_provider_used": "gemini"
+}

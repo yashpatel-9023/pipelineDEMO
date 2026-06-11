@@ -1,0 +1,40 @@
+{
+  "filename": "201281730.pdf",
+  "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf",
+  "type": "Declaration/Form",
+  "title": "DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER",
+  "number": null,
+  "end_page": 1,
+  "confidence": 1.0,
+  "start_page": 1,
+  "annexure_id": "bae369c6-14af-4f1f-b311-7b921367c6bb",
+  "template_id": 1,
+  "templates": [
+    {
+      "template_id": 1,
+      "title": "DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER",
+      "number": null,
+      "type": "Declaration/Form",
+      "start_page": 1,
+      "end_page": 1,
+      "confidence": 1.0,
+      "is_duplicate": false,
+      "duplicate_of": null,
+      "annexure_id": "bae369c6-14af-4f1f-b311-7b921367c6bb",
+      "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+    },
+    {
+      "template_id": 2,
+      "title": "FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025",
+      "number": null,
+      "type": "Undertaking/Form",
+      "start_page": 2,
+      "end_page": 2,
+      "confidence": 1.0,
+      "is_duplicate": false,
+      "duplicate_of": null,
+      "annexure_id": "5dd6edc1-77e2-49e5-af85-14fc3bdb856d",
+      "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+    }
+  ]
+}

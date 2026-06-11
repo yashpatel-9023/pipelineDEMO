@@ -1,0 +1,242 @@
+{
+    "status": "completed",
+    "message": "Processed 8 files (including archives; filtering disabled), 0 content duplicate(s) skipped",
+    "total_files_processed": 8,
+    "files_passed_filtering": 8,
+    "filtering_enabled": false,
+    "successful_files": 8,
+    "error_files": 0,
+    "total_templates_found": 3,
+    "content_duplicates_skipped": 0,
+    "duplicates_saved": {
+        "saved": false,
+        "tender_id": 99896935,
+        "saved_disk": 0,
+        "saved_archive": 0,
+        "directory": null
+    },
+    "ai_duplicate_pass": {
+        "ran": true,
+        "dropped_count": 0,
+        "drop_map": {},
+        "merged_pdf": "D:\\annexure_listing\\ai_dedup_temp\\99896935\\merged_templates.pdf",
+        "dropped": [],
+        "dropped_saved": {
+            "saved": false,
+            "saved_count": 0,
+            "directory": null
+        }
+    },
+    "results": [
+        {
+            "filename": "201281729.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281729.pdf",
+            "annexure_id": "45253e87-4d46-43c0-9917-a3862d68dd7c",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 17,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:45.200870"
+        },
+        {
+            "filename": "201281730.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf",
+            "annexure_id": "b1d4913e-dcab-4bbc-b7b1-3fffab7ce0c9",
+            "templates": [
+                {
+                    "template_id": 1,
+                    "title": "DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER",
+                    "number": null,
+                    "type": "Declaration/Form",
+                    "start_page": 1,
+                    "end_page": 1,
+                    "confidence": 1.0,
+                    "is_duplicate": false,
+                    "duplicate_of": null,
+                    "annexure_id": "bae369c6-14af-4f1f-b311-7b921367c6bb",
+                    "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+                },
+                {
+                    "template_id": 2,
+                    "title": "FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025",
+                    "number": null,
+                    "type": "Undertaking/Form",
+                    "start_page": 2,
+                    "end_page": 2,
+                    "confidence": 1.0,
+                    "is_duplicate": false,
+                    "duplicate_of": null,
+                    "annexure_id": "5dd6edc1-77e2-49e5-af85-14fc3bdb856d",
+                    "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+                }
+            ],
+            "status": "success",
+            "result": {
+                "total_templates": 2,
+                "document_info": {
+                    "total_pages": 2,
+                    "analyzed_successfully": true
+                },
+                "templates": [
+                    {
+                        "template_id": 1,
+                        "title": "DECLARATION OF LOCAL CONTENT BY LOCAL SUPPLIER",
+                        "number": null,
+                        "type": "Declaration/Form",
+                        "start_page": 1,
+                        "end_page": 1,
+                        "confidence": 1.0,
+                        "is_duplicate": false,
+                        "duplicate_of": null,
+                        "annexure_id": "bae369c6-14af-4f1f-b311-7b921367c6bb",
+                        "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+                    },
+                    {
+                        "template_id": 2,
+                        "title": "FORMAT OF UNDERTAKING TO BE SUBMITTED BY VENDOR REGARDING CONFLICT OF INTEREST AMONG BIDDERS/ AGENTS AS PER DPM 2025",
+                        "number": null,
+                        "type": "Undertaking/Form",
+                        "start_page": 2,
+                        "end_page": 2,
+                        "confidence": 1.0,
+                        "is_duplicate": false,
+                        "duplicate_of": null,
+                        "annexure_id": "5dd6edc1-77e2-49e5-af85-14fc3bdb856d",
+                        "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281730.pdf"
+                    }
+                ]
+            },
+            "timestamp": "2026-06-11T11:54:38.612314"
+        },
+        {
+            "filename": "201281731.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281731.pdf",
+            "annexure_id": "6f2a2e70-f139-4cc2-b76a-19dffbdb1add",
+            "templates": [
+                {
+                    "template_id": 1,
+                    "title": "TECHNICAL SPECIFICATIONS - DETAILS OF ITEMS FOR COLLEGE OF MILITARY ENGINEERING",
+                    "number": null,
+                    "type": "Specification",
+                    "start_page": 1,
+                    "end_page": 14,
+                    "confidence": 1.0,
+                    "is_duplicate": false,
+                    "duplicate_of": null,
+                    "annexure_id": "7d307024-dbe1-4480-b4cc-702de7ad50db",
+                    "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281731.pdf"
+                }
+            ],
+            "status": "success",
+            "result": {
+                "total_templates": 1,
+                "document_info": {
+                    "total_pages": 14,
+                    "analyzed_successfully": true
+                },
+                "templates": [
+                    {
+                        "template_id": 1,
+                        "title": "TECHNICAL SPECIFICATIONS - DETAILS OF ITEMS FOR COLLEGE OF MILITARY ENGINEERING",
+                        "number": null,
+                        "type": "Specification",
+                        "start_page": 1,
+                        "end_page": 14,
+                        "confidence": 1.0,
+                        "is_duplicate": false,
+                        "duplicate_of": null,
+                        "annexure_id": "7d307024-dbe1-4480-b4cc-702de7ad50db",
+                        "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\201281731.pdf"
+                    }
+                ]
+            },
+            "timestamp": "2026-06-11T11:54:41.991012"
+        },
+        {
+            "filename": "203047566.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\203047566.pdf",
+            "annexure_id": "073b85ea-42fc-4b27-b0cd-942310f8fccb",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 1,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:34.897983"
+        },
+        {
+            "filename": "203592970.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\203592970.pdf",
+            "annexure_id": "87404b9f-68e0-49d9-8105-c61863bf6c71",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 1,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:35.216029"
+        },
+        {
+            "filename": "204163908.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\204163908.pdf",
+            "annexure_id": "5ed99ae3-1e5d-48c4-a0de-91e9fb67a758",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 1,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:52.035025"
+        },
+        {
+            "filename": "204350972.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\204350972.pdf",
+            "annexure_id": "a6f5b9eb-0753-40d9-ad5a-e6b3f97e1cd4",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 1,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:52.384838"
+        },
+        {
+            "filename": "204350973.pdf",
+            "file_path": "\\\\isrv01\\TenderV3Documents\\2026\\04\\30\\99896935\\204350973.pdf",
+            "annexure_id": "537ef987-5f25-4825-a097-41d1d4c8eb3b",
+            "templates": [],
+            "status": "success",
+            "result": {
+                "total_templates": 0,
+                "document_info": {
+                    "total_pages": 5,
+                    "analyzed_successfully": true
+                },
+                "templates": []
+            },
+            "timestamp": "2026-06-11T11:54:53.148372"
+        }
+    ]
+}

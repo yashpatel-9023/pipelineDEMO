@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from uuid import UUID
 
 from src.api.dependencies import get_db, get_current_user
 from src.api.schemas import (
@@ -14,6 +15,8 @@ from src.api.schemas import (
 from src.db.repository import (
     create_pipeline_run,
     get_pipeline_run_by_workflow_id,
+    create_approval,
+    get_pipeline_step_by_name,
 )
 from temporalio.exceptions import WorkflowAlreadyStartedError
 from temporalio.service import RPCError
@@ -28,17 +31,37 @@ async def start_pipeline_route(
     db: Session = Depends(get_db),
     current_user: str = Depends(get_current_user),
 ) -> PipelineStartResponse:
-    handle = await start_pipeline(request.model_dump())
-    create_pipeline_run(
+    # 1. Create pipeline run record first
+    pipeline_run = create_pipeline_run(
         db,
         tender_id=request.tender_id,
         company_id=request.company_id,
-        workflow_id=handle.id,
+        workflow_id="pending",  # placeholder, will be updated after workflow start
         input_payload=request.payload,
         metadata_={
             "selection_signal_timeout_seconds": request.selection_signal_timeout_seconds,
         },
     )
+    run_id = str(pipeline_run.id)
+
+    # 2. Inject pipeline_run_id into the payload for the workflow
+    payload_with_run_id = request.payload.copy() if request.payload else {}
+    payload_with_run_id["pipeline_run_id"] = run_id
+    # Also pass tender_id and company_id as strings for DB writes
+    payload_with_run_id["tender_id"] = request.tender_id
+    payload_with_run_id["company_id"] = request.company_id
+
+    # 3. Start the workflow
+    handle = await start_pipeline({
+        "tender_id": request.tender_id,
+        "company_id": request.company_id,
+        "payload": payload_with_run_id,
+        "selection_signal_timeout_seconds": request.selection_signal_timeout_seconds,
+    })
+
+    # 4. Update pipeline run with actual workflow_id
+    pipeline_run.workflow_id = handle.id
+    db.commit()
 
     return PipelineStartResponse(workflow_id=handle.id, status="started")
 
@@ -84,8 +107,20 @@ async def resume_pipeline(
             detail=f"Unable to resume workflow {workflow_id}: {exc}",
         )
 
+    # Write approval record
     pipeline_run = get_pipeline_run_by_workflow_id(db, workflow_id)
     if pipeline_run:
+        # Find the step (annexure listing step) to link approval
+        step = get_pipeline_step_by_name(db, pipeline_run.id, "list_annexures")
+        create_approval(
+            db,
+            pipeline_run_id=pipeline_run.id,
+            pipeline_step_id=step.id if step else None,
+            approval_type="annexure_selection",
+            actor=current_user,
+            decision="selected",
+            payload={"selected_annexure_ids": request.annexure_ids},
+        )
         pipeline_run.current_step = "awaiting_selection"
         db.commit()
 

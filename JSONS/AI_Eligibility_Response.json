@@ -1,0 +1,100 @@
+{
+    "score": 90,
+    "Success": true,
+    "Message": "Eligibility already exists",
+    "TotalRecord": 1,
+    "IsAuthFailure": false,
+    "Data": [
+        {
+            "company_ai_eligibility_id": 288,
+            "bms_gui_id": null,
+            "company_id": 12,
+            "company_eligibility_details": {
+                "ai_eligibility": [
+                    {
+                        "name": "Firm's Minimum Annual Turnover",
+                        "reason": "The provided documents do not contain any information regarding the firm's average annual turnover for the last 3 financial years. Therefore, compliance with the 300 Lakhs turnover requirement cannot be determined.",
+                        "complied": "not complied",
+                        "question": "Does your firm's minimum average annual turnover for the last 3 financial years meet or exceed 300 Lakhs?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "OEM Minimum Annual Turnover",
+                        "reason": "The provided documents do not contain any information regarding the OEM's average annual turnover for the last three financial years. Therefore, it is not possible to ascertain if the 1000 Lakhs requirement is met.",
+                        "complied": "not complied",
+                        "question": "Does the OEM's minimum average annual turnover for the last 3 financial years meet or exceed 1000 Lakhs?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "Firm's 3+ Years Service Experience",
+                        "reason": "The Udyam / MSE Certificate (DOC 4) indicates the company's date of commencement of production/business as 2015-10-16, which demonstrates more than 3 years of experience in providing services.",
+                        "complied": "complied",
+                        "question": "Does your firm have at least 3 years of experience in providing the same or similar services?",
+                        "complied_documents": [
+                            "MSME_UDYAM"
+                        ]
+                    },
+                    {
+                        "name": "MSE Status & Preferences",
+                        "reason": "The Udyam / MSE Certificate confirms the company is a Medium enterprise, establishing its MSE status and eligibility to seek an exemption from turnover criteria. However, as a Medium enterprise, it is not eligible for MSE purchase preference, which requires Micro or Small enterprise status.",
+                        "complied": "not complied",
+                        "question": "Are you an MSE and seeking an exemption from the turnover criteria, and are you eligible for MSE purchase preference?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "DPIIT Startup Status & Turnover Exemption",
+                        "reason": "The provided documents do not include any evidence, such as a Startup India Certificate or similar document, to confirm that the company is a DPIIT registered Startup.",
+                        "complied": "not complied",
+                        "question": "Are you a DPIIT registered Startup and seeking an exemption from the turnover criteria?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "Past Performance to Govt/PSU",
+                        "reason": "The provided documents do not include any evidence of past performance such as work orders, completion certificates, or contracts for supplying category products to a Central/State Govt Organization/PSU.",
+                        "complied": "not complied",
+                        "question": "Does your firm or its OEM (themselves or through re-seller(s)) have past performance of supplying the same or similar Category Products for 70% of the bid quantity, in at least one of the last three Financial years before the bid opening date, to any Central / State Govt Organization / PSU?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "Make in India Preference Eligibility",
+                        "reason": "The Udyam / MSE Certificate confirms the company's major activity as Manufacturing, and the Factory Registration and Licence confirms the operation of a factory in India, supporting eligibility for Make in India purchase preference.",
+                        "complied": "complied",
+                        "question": "Are you eligible for Make in India purchase preference?",
+                        "complied_documents": [
+                            "MSME_UDYAM"
+                        ]
+                    },
+                    {
+                        "name": "Local Supplier Status & Content",
+                        "reason": "The Udyam / MSE Certificate indicates the firm is a Medium enterprise with manufacturing as its major activity, and the Factory Registration and Licence shows a factory located in India, confirming the firm is a local supplier. However, none of the provided documents explicitly state that the firm is a 'Class-I local supplier' (50%+ local content) or a 'Class-II local Supplier' (20-50% local content), nor do they declare the specific percentage of local content as required by the tender questions.",
+                        "complied": "not complied",
+                        "question": "What is your firm's local supplier status (Class-I, Class-II, or Non-Local) and local content percentage?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "Product/Spare Parts 6-Year Shelf Life",
+                        "reason": "The provided documents do not contain any information or certification explicitly stating or guaranteeing a minimum shelf life of 6 years for the products or spare parts.",
+                        "complied": "not complied",
+                        "question": "Will the Product/Spare parts supplied as part of the services have a minimum shelf life of 6 years on the date of supply, ensuring minimum 6 years of usable shelf life is available/balance?",
+                        "complied_documents": []
+                    },
+                    {
+                        "name": "Firm's Registered Office in India",
+                        "reason": "The Factory Registration and Licence provides a physical address in India. Additionally, the Udyam / MSE Certificate, EPF Registration, and PAN Card confirm the company's registration with various Indian government authorities, thereby indicating a registered presence and office in India.",
+                        "complied": "complied",
+                        "question": "Does your firm have a registered office in India?",
+                        "complied_documents": [
+                            "FACTORY LICENSE"
+                        ]
+                    }
+                ],
+                "client_details": []
+            },
+            "created_by": 128,
+            "created_date_time": "2026-06-11T06:01:18.343Z",
+            "tender_id": 99896935
+        }
+    ],
+    "StatusCode": 200
+}
+            
