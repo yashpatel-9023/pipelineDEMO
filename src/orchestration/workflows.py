@@ -65,6 +65,19 @@ def _extract_annexure_codes(listing_response: Dict[str, Any]) -> List[str]:
     return annexure_ids
 
 
+def _extract_annexure_items(listing_response: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Extract full annexure template items for human notification."""
+    items = []
+    for file_result in listing_response.get("results", []):
+        templates = file_result.get("result", {}).get("templates", [])
+        for template in templates:
+            # Include source file for context
+            item = template.copy()
+            item["source_file"] = file_result.get("file_path", "")
+            items.append(item)
+    return items
+
+
 @workflow.defn
 class TenderBidWorkflow:
     def __init__(self) -> None:
@@ -99,6 +112,7 @@ class TenderBidWorkflow:
             input_data.payload,
             **activity_kwargs,
         )
+        workflow.logger.info(f"Summary activity completed for tender {input_data.tender_id}")
         self.workflow_state["summary_response"] = summary_response
 
         eligibility_response = await workflow.execute_activity(
@@ -106,6 +120,7 @@ class TenderBidWorkflow:
             input_data.payload,
             **activity_kwargs,
         )
+        workflow.logger.info(f"Eligibility activity completed for tender {input_data.tender_id}")
         self.workflow_state["eligibility_response"] = eligibility_response
 
         eligibility_score = _extract_eligibility_score(eligibility_response)
@@ -140,19 +155,21 @@ class TenderBidWorkflow:
             input_data.payload,
             **activity_kwargs,
         )
+        workflow.logger.info(f"Annexure listing activity completed for tender {input_data.tender_id}")
         self.workflow_state["annexure_listing"] = annexure_listing
 
-        annexure_ids = _extract_annexure_codes(annexure_listing)
+        # Build full annexure items list for notification
+        annexure_items = _extract_annexure_items(annexure_listing)
         await workflow.execute_activity(
             notify_human_for_annexure_selection,
             args=[
                 input_data.tender_id,
                 input_data.company_id,
-                annexure_listing.get("items", annexure_listing.get("body", {}).get("results", [])),
+                annexure_items,
             ],
             **activity_kwargs,
         )
-
+        workflow.logger.info(f"Annexure selection notification activity completed for tender {input_data.tender_id}")
         self.current_status = "waiting_for_selection"
         if not self.selected_annexure_ids:
             await workflow.wait_condition(
@@ -161,7 +178,8 @@ class TenderBidWorkflow:
             )
 
         self.current_status = "selected"
-        selected_ids = self.selected_annexure_ids or annexure_ids
+        # Use signal-provided IDs, or fallback to all extracted codes if signal missing
+        selected_ids = self.selected_annexure_ids or _extract_annexure_codes(annexure_listing)
         self.workflow_state["selected_annexures"] = selected_ids
 
         template_payload = {
@@ -176,16 +194,19 @@ class TenderBidWorkflow:
             template_payload,
             **activity_kwargs,
         )
+        workflow.logger.info(f"Template generation activity completed for tender {input_data.tender_id}")
         self.workflow_state["template_response"] = template_response
 
         autofill_results = []
-        for template in template_response.get("results", []):
+        for idx, template in enumerate(template_response.get("results", [])):
+            annexure_id = selected_ids[idx] if idx < len(selected_ids) else None
             autofill_response = await workflow.execute_activity(
                 autofill_template,
                 {
                     "tender_id": input_data.tender_id,
                     "company_id": input_data.company_id,
                     "template": template,
+                    "annexure_id": annexure_id,
                     "context": input_data.payload,
                     "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
                 },
@@ -209,6 +230,7 @@ class TenderBidWorkflow:
             final_response_payload,
             **activity_kwargs,
         )
+        workflow.logger.info(f"Final response generation activity completed for tender {input_data.tender_id}")
         self.workflow_state["final_response"] = final_response
 
         # Update pipeline run status in DB to completed
@@ -226,6 +248,7 @@ class TenderBidWorkflow:
             **activity_kwargs,
         )
 
+        workflow.logger.info(f"Final pipeline status update activity completed for tender {input_data.tender_id}")
         self.current_status = "completed"
         return TenderPipelineResult(
             status="completed",

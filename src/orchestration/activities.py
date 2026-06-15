@@ -80,11 +80,12 @@ async def fetch_tender_summary(payload: Dict[str, Any]) -> Dict[str, Any]:
             return await client.summarize(payload)
         result = await safe_call(real_call, "fetch_tender_summary")
         await _record_step_complete(step_id, result)
+        logger.info(f"Step : {step_id} ||  Activity fetch_tender_summary completed successfully for pipeline_run_id={pipeline_run_id}")
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
         raise
-
+    
 # ─────────────────────────────────────────────────────────────
 # Activity 2: Eligibility
 # ─────────────────────────────────────────────────────────────
@@ -114,6 +115,7 @@ async def evaluate_eligibility(payload: Dict[str, Any]) -> Dict[str, Any]:
                 raw_response=result,
             )
         await _record_step_complete(step_id, result)
+        logger.info(f"evaluate_eligibility completed, score={score}, passed={passed}", extra={"pipeline_run_id": pipeline_run_id, "tender_id": tender_id, "company_id": company_id})
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
@@ -163,6 +165,7 @@ async def list_annexures(payload: Dict[str, Any]) -> Dict[str, Any]:
                         metadata_=item,
                     )
         await _record_step_complete(step_id, result)
+        logger.info(f"list_annexures completed, found {len(items_to_store)} annexure templates", extra={"pipeline_run_id": pipeline_run_id, "tender_id": tender_id})
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
@@ -181,6 +184,7 @@ async def generate_templates(payload: Dict[str, Any]) -> Dict[str, Any]:
             return await client.generate_template(payload)
         result = await safe_call(real_call, "generate_templates")
         await _record_step_complete(step_id, result)
+        logger.info(f"generate_templates completed", extra={"pipeline_run_id": pipeline_run_id})
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
@@ -202,7 +206,7 @@ async def autofill_template(payload: Dict[str, Any]) -> Dict[str, Any]:
         result = await safe_call(real_call, "autofill_template")
         # Find annexure_id from template metadata (if provided)
         template_info = payload.get("template", {})
-        annexure_code = template_info.get("annexure_id") or template_info.get("id")
+        annexure_code = payload.get("annexure_id") or template_info.get("annexure_id")
         if annexure_code:
             with SessionLocal() as db:
                 # find annexure record by tender_id and code
@@ -217,6 +221,7 @@ async def autofill_template(payload: Dict[str, Any]) -> Dict[str, Any]:
                         raw_response=result,
                     )
         await _record_step_complete(step_id, result)
+        logger.info(f"autofill_template completed for annexure_code={annexure_code}", extra={"pipeline_run_id": pipeline_run_id, "tender_id": tender_id, "company_id": company_id})
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
@@ -248,6 +253,7 @@ async def generate_final_response(payload: Dict[str, Any]) -> Dict[str, Any]:
                 metadata_={"generated_by": "Temporal workflow"},
             )
         await _record_step_complete(step_id, result)
+        logger.info(f"generate_final_response completed", extra={"pipeline_run_id": pipeline_run_id, "tender_id": tender_id, "company_id": company_id})
         return result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
@@ -286,7 +292,9 @@ async def update_final_pipeline_status(params: Dict[str, Any]) -> None:
     with SessionLocal() as db:
         if status == "completed":
             update_pipeline_run_completed(db, UUID(pipeline_run_id), result_payload)
+            logger.info(f"Pipeline run {pipeline_run_id} marked as completed")
         elif status == "failed":
             update_pipeline_run_failed(db, UUID(pipeline_run_id), result_payload)
+            logger.info(f"Pipeline run {pipeline_run_id} marked as failed")
         else:
             logger.warning(f"Unknown status {status} for pipeline run {pipeline_run_id}")

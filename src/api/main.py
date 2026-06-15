@@ -14,6 +14,9 @@ from src.db.base import engine
 from src.cache.redis_client import get_redis_cache
 from sqlalchemy import text
 
+from src.core.logging import setup_logging 
+
+setup_logging(level="INFO", json_output=False) 
 
 
 from .routers.approvals import router as approvals_router

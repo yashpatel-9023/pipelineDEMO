@@ -426,6 +426,7 @@ def update_pipeline_run_completed(
     db: Session,
     run_id: UUID,
     result_payload: Dict[str, Any],
+    current_step: str = "completed",
 ) -> Optional[PipelineRun]:
     """Set pipeline run status to completed and store the final result."""
     run = db.get(PipelineRun, run_id)
@@ -433,6 +434,7 @@ def update_pipeline_run_completed(
         return None
     run.status = "completed"
     run.result_payload = result_payload
+    run.current_step = current_step
     run.completed_at = datetime.now(timezone.utc)
     db.commit()
     db.refresh(run)
@@ -443,6 +445,7 @@ def update_pipeline_run_failed(
     db: Session,
     run_id: UUID,
     error_payload: Dict[str, Any],
+    current_step: str = "failed",
 ) -> Optional[PipelineRun]:
     """Set pipeline run status to failed and store error details."""
     run = db.get(PipelineRun, run_id)
@@ -450,6 +453,7 @@ def update_pipeline_run_failed(
         return None
     run.status = "failed"
     run.result_payload = error_payload
+    run.current_step = current_step
     run.completed_at = datetime.now(timezone.utc)
     db.commit()
     db.refresh(run)

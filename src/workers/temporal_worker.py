@@ -6,13 +6,14 @@ from temporalio.worker import Worker, UnsandboxedWorkflowRunner
 
 from src.orchestration.workflows import TenderBidWorkflow
 from src.orchestration import activities
-
+from src.core.logging import setup_logging
 
 def _task_queue() -> str:
     return os.getenv("TEMPORAL_TASK_QUEUE", "pipeline-task-queue")
 
 
 async def main() -> None:
+    setup_logging(level=os.getenv("LOG_LEVEL", "INFO"), json_output=False)
     client = await Client.connect(os.getenv("TEMPORAL_TARGET_HOST", "localhost:7233"))
     worker = Worker(
         client,
