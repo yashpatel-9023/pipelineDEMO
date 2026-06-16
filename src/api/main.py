@@ -22,6 +22,7 @@ setup_logging(level="INFO", json_output=False)
 from .routers.approvals import router as approvals_router
 from .routers.documents import router as documents_router
 from .routers.pipeline import router as pipeline_router
+from .routers.metadata import router as metadata_router
 
 app = FastAPI(title="Tender Bid Orchestrator API", version="0.1.0")
 
@@ -116,6 +117,7 @@ async def login_for_access_token(
 app.include_router(pipeline_router)
 app.include_router(documents_router)
 app.include_router(approvals_router)
+app.include_router(metadata_router)
 
 
 

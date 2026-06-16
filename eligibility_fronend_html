@@ -1,0 +1,166 @@
+<div class="border border-cyan-pale rounded-[4px] h-90 overflow-auto p-2.5">
+    <div class="flex flex-col gap-2.5">
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Firm
+                    Annual Turnover (Last 3 Years)</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The provided documents, including Udyam / MSE
+                        Certificate, BIS License, Factory Registration and Licence, EPF Registration, AS9100
+                        Certificate, ISO 9001:2015 Certificate, ISO/IEC 27001:2022 Certificate, PAN Card, Tender
+                        Specification (RFP / RFQ / NIT), and Affidavit / Non-Blacklisting Declaration, do not contain
+                        information regarding the firm's average annual turnover for the last 3 financial years.</span>
+                </p><span class="text-primary text-sm font-medium cursor-pointer">Read More</span>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">OEM
+                    Annual Turnover (Last 3 Years)</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The provided documents, including Udyam / MSE
+                        Certificate, Factory Registration and Licence, BIS License, Tender Specification, Test Report
+                        with Test Report, AS9100 Certificate, EPF Registration, Affidavit / Non-Blacklisting
+                        Declaration, ISO/IEC 27001:2022 Certificate, and ISO 9001:2015 Certificate, do not contain any
+                        information regarding the OEM's average annual turnover for the last three financial years.
+                        Therefore, it is not possible to assess compliance with the specified financial
+                        requirement.</span></p><span class="text-primary text-sm font-medium cursor-pointer">Read
+                    More</span>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="check-icon" loading="lazy" width="22"
+                        height="22" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-check.0jlshn24i3vl_.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Firm
+                    Experience (Minimum 3 Years)</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The Udyam / MSE Certificate indicates the date of
+                        commencement of production/business as 2015-10-16, which demonstrates more than 3 years of
+                        experience in providing services related to its major activity of Manufacturing.</span></p>
+            </div>
+            <div class="w-full border-t border-[#E0E0E0] pt-2.5 mt-2.5"><span class="text-sm text-[#3D3D3D]">Complied
+                    Documents:</span><span class="text-black text-sm"> MSME_UDYAM</span></div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="check-icon" loading="lazy" width="22"
+                        height="22" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-check.0jlshn24i3vl_.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">MSE
+                    Turnover Exemption Eligibility</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The Udyam / MSE Certificate confirms that the company is
+                        registered as a Medium enterprise, which falls under the Micro, Small, and Medium Enterprises
+                        (MSME) category, thus satisfying the requirement of being an MSE.</span></p>
+            </div>
+            <div class="w-full border-t border-[#E0E0E0] pt-2.5 mt-2.5"><span class="text-sm text-[#3D3D3D]">Complied
+                    Documents:</span><span class="text-black text-sm"> MSME_UDYAM</span></div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">DPIIT
+                    Startup Turnover Exemption</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The provided documents do not include a DPIIT Startup
+                        Certificate or any other document explicitly stating that the company is a DPIIT registered
+                        Startup. The Udyam / MSE Certificate (DOC 2) confirms MSME status, which is distinct from DPIIT
+                        Startup registration.</span></p>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Past
+                    Performance (Govt/PSU Supply)</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The provided documents, including Tender Specification
+                        (RFP / RFQ / NIT), BIS License, AS9100 Certificate, EPF Registration, Udyam / MSE Certificate,
+                        Affidavit / Non-Blacklisting Declaration, ISO/IEC 27001:2022 Certificate, Service and Support
+                        Undertaking, and Factory Registration and Licence, do not contain any evidence of past
+                        performance of supplying products to a Central/State Govt Organization/PSU, such as work orders
+                        or completion certificates.</span></p><span
+                    class="text-primary text-sm font-medium cursor-pointer">Read More</span>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="check-icon" loading="lazy" width="22"
+                        height="22" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-check.0jlshn24i3vl_.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Make in
+                    India Preference Eligibility</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The company's Udyam / MSE Certificate confirms its
+                        status as a manufacturing enterprise in India, and the Factory Registration and Licence further
+                        demonstrates its physical manufacturing presence, which are key indicators for Make in India
+                        purchase preference eligibility.</span></p>
+            </div>
+            <div class="w-full border-t border-[#E0E0E0] pt-2.5 mt-2.5"><span class="text-sm text-[#3D3D3D]">Complied
+                    Documents:</span><span class="text-black text-sm"> MSME_UDYAM</span></div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">MSE
+                    Purchase Preference Eligibility</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The Udyam / MSE Certificate (DOC 1) indicates the
+                        company's enterprise type as 'Medium'. MSE purchase preference is typically applicable to Micro
+                        and Small Enterprises, not Medium Enterprises.</span></p>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Local
+                    Supplier Status and Content</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>None of the provided documents explicitly state that the
+                        firm is a "Class-I local supplier" or provide evidence of meeting the minimum local content
+                        requirement of 50% or more. Similarly, there is no information classifying the firm as a
+                        "Class-II local Supplier" or specifying local content 20% to less than 50%. However, the Factory
+                        Registration and Licence and Udyam / MSE Certificate indicate the firm is an Indian
+                        manufacturer, suggesting it is a local supplier, not a "Non Local Supplier".</span></p><span
+                    class="text-primary text-sm font-medium cursor-pointer">Read More</span>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="uncheck-icon" loading="lazy" width="20"
+                        height="20" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-uncheck.1q7fun6rpnzxu.svg"
+                        style="color: transparent;"></span><label
+                    class="text-[15px] font-medium text-primary">Product/Spare Parts Shelf Life (6 Years)</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>None of the provided documents, including the Tender
+                        Specification (DOC 1), BIS License (DOC 2), AS9100 Certificate (DOC 3), ISO/IEC 27001:2022
+                        Certificate (DOC 4), Service and Support Undertaking (DOC 5), Test Report with Test Report (DOC
+                        6), ISO 9001:2015 Certificate (DOC 7), Factory Registration and Licence (DOC 8), EPF
+                        Registration (DOC 9), or Udyam / MSE Certificate (DOC 10), contain information or a guarantee
+                        regarding a minimum shelf life of 6 years for products or spare parts.</span></p><span
+                    class="text-primary text-sm font-medium cursor-pointer">Read More</span>
+            </div>
+        </div>
+        <div class="w-full border border-[#EEEEEE] rounded-[6px] p-0.9375">
+            <div class="flex items-center gap-2.5 mb-1"><span><img alt="check-icon" loading="lazy" width="22"
+                        height="22" decoding="async" data-nimg="1"
+                        src="/_next/static/media/eligibility-check.0jlshn24i3vl_.svg"
+                        style="color: transparent;"></span><label class="text-[15px] font-medium text-primary">Firm
+                    Registered Office in India</label></div>
+            <div class="w-full">
+                <p class="text-sm leading-5 line-clamp-2"><span>The Factory Registration and Licence document explicitly
+                        states the licensed premises are situated in Thalambur, Kancheepuram District, India, confirming
+                        a registered presence in the country.</span></p>
+            </div>
+            <div class="w-full border-t border-[#E0E0E0] pt-2.5 mt-2.5"><span class="text-sm text-[#3D3D3D]">Complied
+                    Documents:</span><span class="text-black text-sm"> FACTORY LICENSE</span></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1405 @@
+<div class="w-full p-0.9375">
+    <div class="mb-2.5">
+        <div class="w-full flex items-end">
+            <div class="w-[90%] flex flex-wrap gap-[5px] md:gap-[15px] mb-2.5">
+                <div class="flex flex-col border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <div class="flex gap-2.5 items-center"><img alt="location-icon" loading="lazy" width="18"
+                            height="18" decoding="async" data-nimg="1"
+                            src="/_next/static/media/location-icon-primary.13vh-xu_dn_7r.svg"
+                            style="color: transparent;">
+                        <h3 class="text-[14px] font-normal text-primary"><strong class="font-semibold">Indian
+                                Army</strong></h3>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">BMS ID :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">1108</h5>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">Tender Status :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">Refer Doc</h5>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">Reference No :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">GEM/2026/B/7490294</h5>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">Emd :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">Refer To Documents</h5>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">Document Fee :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">Refer To Documents</h5>
+                </div>
+                <div
+                    class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap border-0 md:border-b-0 md:border-r border-silver-gray pb-2 md:pb-0 pr-5">
+                    <span class="text-[12px] 2xl:text-[14px] text-slate-gray">Estimated Value :</span>
+                    <h5 class="text-[13px] 2xl:text-[14px] text-black">Refer To Documents</h5>
+                </div>
+                <div class="flex items-center gap-[5px] justify-start md:justify-center flex-wrap">
+                    <p class="text-[14px] leading-5 line-clamp-2"><span><strong
+                                class="text-rust-orange font-semibold">Corrigendum:</strong> supply of - mini caliber
+                            robot or csrov , explosive vapour detector evd , rocket wrench , dgital electronic
+                            sethoscope , de armour disruptor , back scatter x ray machine , triple sensor metal detector
+                            , liquid explosive detector , chemical analyser , drone with water disrupter , drone with
+                            search and explosive detection capability , eod 10 e nij - upgradation of trg infrastructure
+                            with latest bomb disposal and counter ied eqpt | quantity - 15</span></p><span
+                        class="text-[#005249] text-[14px] font-medium cursor-pointer">Read More</span>
+                </div>
+            </div><a target="_blank" href="/tender-tasks/tender-details/9148ee3e-273c-4a6d-acab-2aede492a68d"><button
+                    data-slot="button"
+                    class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border border-primary rounded-[6px] bg-white shadow-[3px_3px_12px_0px_#0000001F] text-primary hover:bg-gradient-to-b hover:from-[#1D877B] hover:to-[#005249] hover:text-white h-9 px-4 py-2 has-[&gt;svg]:px-3"
+                    type="button">View Full Detail</button></a>
+        </div>
+    </div>
+    <div data-slot="accordion" class="w-full" data-orientation="vertical">
+        <div data-state="closed" data-orientation="vertical" data-slot="accordion-item"
+            class="border-b last:border-b-0 border! border-[#D5D5D5] rounded-[4px] p-2.5 mb-0.9375">
+            <h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-expanded="false"
+                    data-state="closed" data-orientation="vertical" id="radix-_r_a_" data-slot="accordion-trigger"
+                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 border-0 p-0 text-primary cursor-pointer"
+                    data-radix-collection-item="">AI Summary<svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chevron-down text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
+                        aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg></button></h3>
+            <div data-state="closed" id="radix-_r_b_" hidden="" role="region" aria-labelledby="radix-_r_a_"
+                data-orientation="vertical" data-slot="accordion-content"
+                class="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
+                style="--radix-accordion-content-height: var(--radix-collapsible-content-height); --radix-accordion-content-width: var(--radix-collapsible-content-width);">
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between items-center mb-4 flex-wrap"><span
+            class="text-[16px] font-semibold text-primary">Prepare Response</span><button data-slot="button"
+            class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-gradient-to-b from-[#1D877B] to-[#005249] text-white rounded-[6px] shadow-[3px_3px_12px_0px_#0000001F] h-9 px-4 py-2 has-[&gt;svg]:px-3"
+            type="button">Delete All</button></div>
+    <div class="overflow-x-auto max-h-100 overflow-y-auto mb-10 ">
+        <div class="">
+            <div class="relative w-full overflow-auto custom-scroll">
+                <table class="w-full caption-bottom text-sm">
+                    <thead class="[&amp;_tr]:border-b bg-off-white-pure">
+                        <tr class="border-b transition-colors">
+                            <th
+                                class="h-12 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border w-10 p-2.5">
+                            </th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
+                                    indeterminate="false" data-disabled="" disabled=""></button></th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                Sr.</th>
+                            <th
+                                class="h-12 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border p-2.5 w-[30%]">
+                                Name</th>
+                            <th
+                                class="h-12 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border p-2.5 w-[15%]">
+                                Response Type<div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_o_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none text-black" type="text" value=""></div>
+                                    <input id="base-ui-_r_o_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-20 p-2.5">
+                                <div class="flex flex-col items-center gap-1"><label class="cursor-pointer"
+                                        for="_selectAllLetterHead">Letterhead</label><button type="button"
+                                        role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                        data-slot="checkbox"
+                                        class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
+                                        id="_selectAllLetterHead"></button></div>
+                            </th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-40 p-2.5">
+                                Source</th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-40 p-2.5">
+                                Document Action</th>
+                            <th
+                                class="h-12 align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 border text-center w-32 p-2.5">
+                                Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="[&amp;_tr:last-child]:border-0">
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">1</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">General Seller Document Requirement</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_11_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_11_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">2</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">OEM Authorization Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_14_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_14_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">3</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Specific ATC Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_17_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_17_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">4</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">BoQ Specification Compliance Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1a_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1a_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">5</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Certified Audited Balance Sheets (3 Years)</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1d_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1d_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">6</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">CA/Cost Accountant Turnover Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1g_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1g_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">7</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Turnover Exemption Supporting Documents</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1j_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1j_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">8</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">EMD Exemption (MSE Category)</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1m_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1m_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">AI
+                                Generated</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 cursor-pointer">View <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg></span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg>
+                                    <div
+                                        class="max-w-45 flex items-center gap-2 h-8 cursor-pointer text-[13px] text-black hover:underline hover:text-primary">
+                                        <img alt="file" loading="lazy" width="20" height="20" decoding="async"
+                                            data-nimg="1" class="shrink-0 min-w-5"
+                                            src="/_next/static/media/download-icon.320hmkgjj7sd2.svg"
+                                            style="color: transparent;"></div><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">9</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">OEM Local Content &amp; Value Addition Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1p_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1p_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">10</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Local Content Declaration (Bid Value &gt; 10 Cr)</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1s_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1s_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">AI
+                                Generated</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 cursor-pointer">View <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg></span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg>
+                                    <div
+                                        class="max-w-45 flex items-center gap-2 h-8 cursor-pointer text-[13px] text-black hover:underline hover:text-primary">
+                                        <img alt="file" loading="lazy" width="20" height="20" decoding="async"
+                                            data-nimg="1" class="shrink-0 min-w-5"
+                                            src="/_next/static/media/download-icon.320hmkgjj7sd2.svg"
+                                            style="color: transparent;"></div><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">11</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Past Performance Contracts &amp; CRAC</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_1v_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_1v_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">12</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">OEM/Service Provider Authorization Form</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_22_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_22_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">13</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Government Registered Office Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_25_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_25_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">14</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Sound Financial Standing Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_28_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_28_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">15</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">No Ban or Blacklisting Certificate</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_2b_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_2b_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">AI
+                                Generated</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 cursor-pointer">View <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg></span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg>
+                                    <div
+                                        class="max-w-45 flex items-center gap-2 h-8 cursor-pointer text-[13px] text-black hover:underline hover:text-primary">
+                                        <img alt="file" loading="lazy" width="20" height="20" decoding="async"
+                                            data-nimg="1" class="shrink-0 min-w-5"
+                                            src="/_next/static/media/download-icon.320hmkgjj7sd2.svg"
+                                            style="color: transparent;"></div><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">16</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Buyer Uploaded ATC Document</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_2e_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_2e_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">17</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Local Supplier Classification Declaration</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_2h_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_2h_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                        <tr class="border-b transition-colors" draggable="true">
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border cursor-move"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-grip-horizontal text-gray-400"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="9" r="1"></circle>
+                                    <circle cx="19" cy="9" r="1"></circle>
+                                    <circle cx="5" cy="9" r="1"></circle>
+                                    <circle cx="12" cy="15" r="1"></circle>
+                                    <circle cx="19" cy="15" r="1"></circle>
+                                    <circle cx="5" cy="15" r="1"></circle>
+                                </svg></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 border text-center w-16 p-2.5">
+                                <button type="button" role="checkbox" aria-checked="false" data-state="unchecked"
+                                    data-disabled="" disabled="" value="on" data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">18</td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border"><textarea
+                                    placeholder="Please enter document name"
+                                    class="w-full bg-transparent outline-none text-sm">Conflict of Interest Undertaking</textarea>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border">
+                                <div>
+                                    <div data-slot="combobox-chips"
+                                        class="flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40">
+                                        <input autocomplete="off" spellcheck="false" autocorrect="off"
+                                            autocapitalize="none" role="combobox" aria-expanded="false"
+                                            aria-haspopup="listbox" aria-autocomplete="list" id="base-ui-_r_2k_"
+                                            data-slot="combobox-chip-input" placeholder="select type"
+                                            class="min-w-16 flex-1 outline-none" type="text" value=""></div><input
+                                        id="base-ui-_r_2k_-hidden-input" tabindex="-1" aria-hidden="true" value=""
+                                        style="clip-path: inset(50%); overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; width: 1px; height: 1px; margin: -1px; position: fixed; top: 0px; left: 0px;">
+                                </div>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><button
+                                    type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on"
+                                    data-slot="checkbox"
+                                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"></button>
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">Missing
+                            </td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center"><span
+                                    class="inline-flex items-center gap-1 text-green-600 ">-</span></td>
+                            <td class="align-middle [&amp;:has([role=checkbox])]:pr-0 p-2.5 border text-center">
+                                <div class="flex items-center gap-2 justify-center"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-upload text-slate-gray cursor-pointer" aria-hidden="true">
+                                        <path d="M12 3v12"></path>
+                                        <path d="m17 8-5-5-5 5"></path>
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-trash2 lucide-trash-2 text-red-500 cursor-pointer"
+                                        aria-hidden="true">
+                                        <path d="M10 11v6"></path>
+                                        <path d="M14 11v6"></path>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-end mt-4"><button data-slot="button"
+            class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border border-primary rounded-[6px] bg-white shadow-[3px_3px_12px_0px_#0000001F] text-primary hover:bg-gradient-to-b hover:from-[#1D877B] hover:to-[#005249] hover:text-white h-9 has-[&gt;svg]:px-3 px-3 py-1.5"
+            type="button">+ Add Documents</button></div>
+    <div class="w-full flex justify-center">
+        <div class="flex flex-col gap-2 justify-center mt-0.9375"><label for="indexing"
+                class="flex items-center gap-2 cursor-pointer w-fit"><button type="button" role="checkbox"
+                    aria-checked="false" data-state="unchecked" data-disabled="" disabled="" value="on"
+                    data-slot="checkbox"
+                    class="cursor-pointer peer border-medium-dark-gray data-[state=checked]:bg-success-green data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-success-green data-[state=checked]:border-success-green focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[3px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
+                    id="indexing"></button><span class="text-[14px] text-slate-blue">Include index with
+                    response</span></label><button data-slot="button"
+                class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-gradient-to-b from-[#1D877B] to-[#005249] text-white rounded-[6px] shadow-[3px_3px_12px_0px_#0000001F] h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full md:w-full"
+                disabled="" type="button">Submit</button></div>
+    </div>
+    <div class="w-full overflow-x-auto mt-0.9375"></div>
+</div>
