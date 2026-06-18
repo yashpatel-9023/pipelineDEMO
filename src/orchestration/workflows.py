@@ -7,6 +7,8 @@ from pydantic import BaseModel, Field
 from temporalio import workflow
 from temporalio.common import RetryPolicy
 
+from src.core.config import get_settings
+
 from .activities import (
     autofill_template,
     evaluate_eligibility,
@@ -39,8 +41,8 @@ class TenderPipelineResult(BaseModel):
 
 
 def _extract_eligibility_score(response: Dict[str, Any]) -> int:
-    if score := response.get("score"):
-        return int(score)
+    if "score" in response and response["score"] is not None:
+        return int(response["score"])
 
     if "Data" in response and isinstance(response["Data"], list):
         first_item = response["Data"][0] if response["Data"] else {}
@@ -124,7 +126,7 @@ class TenderBidWorkflow:
         self.workflow_state["eligibility_response"] = eligibility_response
 
         eligibility_score = _extract_eligibility_score(eligibility_response)
-        eligibility_passed = eligibility_score >= 75
+        eligibility_passed = eligibility_score >= get_settings().ELIGIBILITY_THRESHOLD
         if not eligibility_passed:
             self.current_status = "failed"
             await workflow.execute_activity(
@@ -158,34 +160,13 @@ class TenderBidWorkflow:
         workflow.logger.info(f"Annexure listing activity completed for tender {input_data.tender_id}")
         self.workflow_state["annexure_listing"] = annexure_listing
 
-        # Build full annexure items list for notification
+        # Build full annexure items list
         annexure_items = _extract_annexure_items(annexure_listing)
-        await workflow.execute_activity(
-            notify_human_for_annexure_selection,
-            args=[
-                input_data.tender_id,
-                input_data.company_id,
-                annexure_items,
-            ],
-            **activity_kwargs,
-        )
-        workflow.logger.info(f"Annexure selection notification activity completed for tender {input_data.tender_id}")
-        self.current_status = "waiting_for_selection"
-        if not self.selected_annexure_ids:
-            await workflow.wait_condition(
-                lambda: self.selected_annexure_ids is not None,
-                timeout=timedelta(seconds=input_data.selection_signal_timeout_seconds),
-            )
-
-        self.current_status = "selected"
-        # Use signal-provided IDs, or fallback to all extracted codes if signal missing
-        selected_ids = self.selected_annexure_ids or _extract_annexure_codes(annexure_listing)
-        self.workflow_state["selected_annexures"] = selected_ids
 
         template_payload = {
             "tender_id": input_data.tender_id,
             "company_id": input_data.company_id,
-            "annexure_ids": selected_ids,
+            "annexure_items": annexure_items,
             "context": input_data.payload,
             "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
         }
@@ -197,16 +178,45 @@ class TenderBidWorkflow:
         workflow.logger.info(f"Template generation activity completed for tender {input_data.tender_id}")
         self.workflow_state["template_response"] = template_response
 
+        # Build full annexure items list for notification
+        await workflow.execute_activity(
+            notify_human_for_annexure_selection,
+            args=[
+                input_data.tender_id,
+                input_data.company_id,
+                annexure_items,
+            ],
+            **activity_kwargs,
+        )
+        workflow.logger.info(f"Annexure selection notification activity completed for tender {input_data.tender_id}")
+        self.current_status = "waiting_for_selection"
+        if self.selected_annexure_ids is None:
+            await workflow.wait_condition(
+                lambda: self.selected_annexure_ids is not None,
+                timeout=timedelta(seconds=input_data.selection_signal_timeout_seconds),
+            )
+
+        self.current_status = "selected"
+        # Use signal-provided IDs, or fallback to all extracted codes if signal missing
+        all_ids = [item.get("annexure_id") for item in annexure_items if item.get("annexure_id")]
+        selected_ids = self.selected_annexure_ids if self.selected_annexure_ids is not None else all_ids
+        self.workflow_state["selected_annexures"] = selected_ids
+
+        # Filter the generated templates to only keep selected ones
+        selected_templates = []
+        for res in template_response.get("results", []):
+            if res.get("annexure_id") in selected_ids:
+                selected_templates.append(res)
+
         autofill_results = []
-        for idx, template in enumerate(template_response.get("results", [])):
-            annexure_id = selected_ids[idx] if idx < len(selected_ids) else None
+        for template in selected_templates:
             autofill_response = await workflow.execute_activity(
                 autofill_template,
                 {
                     "tender_id": input_data.tender_id,
                     "company_id": input_data.company_id,
                     "template": template,
-                    "annexure_id": annexure_id,
+                    "annexure_id": template.get("annexure_id"),
                     "context": input_data.payload,
                     "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
                 },
@@ -220,7 +230,10 @@ class TenderBidWorkflow:
             "summary_response": summary_response,
             "eligibility_response": eligibility_response,
             "annexure_ids": selected_ids,
-            "template_response": template_response,
+            "template_response": {
+                "status": "success",
+                "results": selected_templates
+            },
             "autofill_results": autofill_results,
             "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
         }

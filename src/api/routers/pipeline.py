@@ -110,8 +110,8 @@ async def resume_pipeline(
     # Write approval record
     pipeline_run = get_pipeline_run_by_workflow_id(db, workflow_id)
     if pipeline_run:
-        # Find the step (annexure listing step) to link approval
-        step = get_pipeline_step_by_name(db, pipeline_run.id, "list_annexures")
+        # Find the step (template generation step) to link approval
+        step = get_pipeline_step_by_name(db, pipeline_run.id, "generate_templates")
         create_approval(
             db,
             pipeline_run_id=pipeline_run.id,

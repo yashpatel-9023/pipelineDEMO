@@ -43,7 +43,7 @@ class ExternalServiceError(PipelineBaseError):
 class EligibilityCheckFailed(PipelineBaseError):
     """Raised when a company does not meet the eligibility threshold."""
 
-    def __init__(self, score: int, threshold: int = 75) -> None:
+    def __init__(self, score: int, threshold: int = 100) -> None:
         super().__init__(
             f"Eligibility score {score}% is below the {threshold}% threshold",
             details={"score": score, "threshold": threshold},

@@ -61,7 +61,7 @@ Task 5: Main Orchestration Workflow
 Implement the main workflow using your chosen orchestration tool (Temporal / LangGraph).
 Define all steps with proper error handling, retries, and Human-in-the-Loop (HITL) checkpoints.
 Include logic for:
-Eligibility threshold check (>75%)
+Eligibility threshold check (100%)
 Annexure listing → user selection → template generation → autofill
 Final AI Response Generation
 

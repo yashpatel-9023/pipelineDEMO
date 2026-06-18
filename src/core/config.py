@@ -63,7 +63,7 @@ class Settings(BaseSettings):
     FINAL_RESPONSE_SERVICE_API_KEY: Optional[str] = None
 
     # ── Eligibility threshold ────────────────────────────────────────────
-    ELIGIBILITY_THRESHOLD: int = 75
+    ELIGIBILITY_THRESHOLD: int = 100
 
 
 @lru_cache(maxsize=1)

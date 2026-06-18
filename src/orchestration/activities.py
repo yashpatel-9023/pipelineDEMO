@@ -8,6 +8,7 @@ from uuid import UUID
 from temporalio import activity
 
 from src.core.logging import get_logger
+from src.core.config import get_settings
 from src.utils.mock_loader import load_mock_response
 from src.db.base import SessionLocal
 from src.db.models import Annexure
@@ -38,14 +39,14 @@ def _get_service_client(service_class, url_env: str, key_env: str, default_url: 
     api_key = os.getenv(key_env)
     return service_class(base_url=base_url, api_key=api_key)
 
-async def safe_call(real_func, activity_name: str):
+async def safe_call(real_func, activity_name: str, payload: Dict[str, Any] = None):
     if MOCK_MODE:
-        return load_mock_response(activity_name)
+        return load_mock_response(activity_name, payload)
     try:
         return await real_func()
     except (httpx.HTTPError, ConnectionError, ApiServiceError, Exception) as exc:
         logger.warning(f"Service call failed for {activity_name}, using mock", extra={"error": str(exc)})
-        return load_mock_response(activity_name)
+        return load_mock_response(activity_name, payload)
 
 # Helper to write step status
 async def _record_step_start(pipeline_run_id: str, step_name: str, step_type: str, step_order: int) -> str:
@@ -103,7 +104,7 @@ async def evaluate_eligibility(payload: Dict[str, Any]) -> Dict[str, Any]:
         # Extract score and store eligibility result
         from ..orchestration.workflows import _extract_eligibility_score  # temporary import
         score = _extract_eligibility_score(result)
-        passed = score >= 75
+        passed = score >= get_settings().ELIGIBILITY_THRESHOLD
         with SessionLocal() as db:
             upsert_eligibility_result(
                 db,
@@ -180,12 +181,50 @@ async def generate_templates(payload: Dict[str, Any]) -> Dict[str, Any]:
     step_id = await _record_step_start(pipeline_run_id, "generate_templates", "ai_call", 4)
     try:
         client = _get_service_client(TemplateGenerationService, "TEMPLATE_SERVICE_URL", "TEMPLATE_SERVICE_API_KEY", "http://localhost:8004")
-        async def real_call():
-            return await client.generate_template(payload)
-        result = await safe_call(real_call, "generate_templates")
-        await _record_step_complete(step_id, result)
-        logger.info(f"generate_templates completed", extra={"pipeline_run_id": pipeline_run_id})
-        return result
+        
+        # Group annexure items by file path
+        items_by_file = {}
+        for item in payload.get("annexure_items", []):
+            file_path = item.get("file_path") or item.get("source_file")
+            if not file_path:
+                continue
+            if file_path not in items_by_file:
+                items_by_file[file_path] = []
+            items_by_file[file_path].append(item)
+            
+        decorated_results = []
+        
+        for file_path, items in items_by_file.items():
+            # Prepare payload for single file
+            file_payload = {
+                "filename": os.path.basename(file_path),
+                "file_path": file_path,
+                "templates": items,
+                "pipeline_run_id": pipeline_run_id,
+                "tender_id": payload.get("tender_id"),
+                "company_id": payload.get("company_id"),
+            }
+            
+            async def real_call(fp=file_payload):
+                return await client.generate_template(fp)
+                
+            response_data = await safe_call(real_call, "generate_templates", file_payload)
+            
+            results_list = response_data.get("results", [])
+            for i, res in enumerate(results_list):
+                if i < len(items):
+                    res["annexure_id"] = items[i].get("annexure_id")
+                    res["file_path"] = file_path
+                decorated_results.append(res)
+                
+        aggregated_result = {
+            "status": "success",
+            "results": decorated_results
+        }
+        
+        await _record_step_complete(step_id, aggregated_result)
+        logger.info(f"generate_templates completed for {len(items_by_file)} files", extra={"pipeline_run_id": pipeline_run_id})
+        return aggregated_result
     except Exception as e:
         await _record_step_failed(step_id, {"error": str(e)})
         raise
@@ -207,6 +246,12 @@ async def autofill_template(payload: Dict[str, Any]) -> Dict[str, Any]:
         # Find annexure_id from template metadata (if provided)
         template_info = payload.get("template", {})
         annexure_code = payload.get("annexure_id") or template_info.get("annexure_id")
+        
+        # Decorate result for display in frontend AutofillView
+        result["title"] = template_info.get("template_title") or template_info.get("title")
+        result["annexure_id"] = annexure_code or template_info.get("annexure_id")
+        result["file_path"] = template_info.get("file_path")
+        
         if annexure_code:
             with SessionLocal() as db:
                 # find annexure record by tender_id and code
