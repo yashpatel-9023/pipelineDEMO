@@ -96,6 +96,3 @@ Handle retries, dead-letter queues, and rate limiting for external APIs.
 
 Do not over-engineer in early tasks. Implement basic Redis + Celery/Temporal queue support in relevant tasks.
 
-
-Start with Task 1 now.
-After you complete each task, I will review and give you the next task + relevant JSON examples.
