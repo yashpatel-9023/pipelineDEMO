@@ -11,6 +11,7 @@ from src.api.schemas import (
     PipelineStartResponse,
     PipelineStatusResponse,
     ResumePipelineResponse,
+    RetryPipelineResponse,
 )
 from src.db.repository import (
     create_pipeline_run,
@@ -125,3 +126,24 @@ async def resume_pipeline(
         db.commit()
 
     return ResumePipelineResponse(workflow_id=workflow_id, status="signaled")
+
+
+@router.post("/{workflow_id}/retry", response_model=RetryPipelineResponse)
+async def retry_pipeline(
+    workflow_id: str,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
+) -> RetryPipelineResponse:
+    client = await create_temporal_client()
+    handle = client.get_workflow_handle(workflow_id)
+    try:
+        await handle.signal("retry_eligibility")
+    except Exception as exc:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unable to retry workflow {workflow_id}: {exc}",
+        )
+
+    # Note: DB status is handled by the workflow's activities
+
+    return RetryPipelineResponse(workflow_id=workflow_id, status="retrying")

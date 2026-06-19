@@ -23,6 +23,17 @@ def load_mock_response(activity_name: str, payload: dict = None) -> dict:
         elif "201281731" in filename_val:
             filename = "AI_Annexure_Template_Generation_Response_2.json"
             
+    if activity_name == "autofill_template" and payload:
+        annexure_id = str(payload.get("annexure_id", ""))
+        if "bae369c6" in annexure_id:
+            filename = "AI_Annexure_Autofill_Response_1.json"
+        elif "5dd6edc1" in annexure_id:
+            filename = "AI_Annexure_Autofill_Response_2.json"
+        elif "7d307024" in annexure_id:
+            filename = "AI_Annexure_Autofill_Response_3.json"
+        else:
+            filename = "AI_Annexure_Autofill_Response_1.json"
+            
     if not filename:
         return {"error": f"No mock defined for {activity_name}"}
     filepath = MOCK_DIR / filename

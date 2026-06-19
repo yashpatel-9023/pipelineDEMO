@@ -832,6 +832,8 @@ function AutofillView({ data }) {
     filledItems = Array.isArray(displayData.results) ? displayData.results : [displayData.results];
   } else if (displayData.autofilled) {
     filledItems = Array.isArray(displayData.autofilled) ? displayData.autofilled : [displayData.autofilled];
+  } else if (displayData.filled_template || displayData.html || displayData.content) {
+    filledItems = [displayData];
   }
 
   if (filledItems.length === 0) {
@@ -964,11 +966,11 @@ export default function App() {
 
   // Helper to determine step status
   const getStepStatus = (stepName) => {
-    // If the run is failed, find which step failed it
-    const isRunFailed = selectedRun?.status === 'failed' || workflowStatus?.status === 'failed';
+    // If the run is failed or waiting for retry, find which step failed it
+    const isRunFailed = selectedRun?.status === 'failed' || workflowStatus?.status === 'failed' || selectedRun?.status === 'waiting_for_retry' || workflowStatus?.status === 'waiting_for_retry';
     if (isRunFailed) {
       // 1. Check if there is an explicit failed step in DB
-      const explicitFailed = runSteps.find(s => s.status === 'failed');
+      const explicitFailed = [...runSteps].reverse().find(s => s.status === 'failed');
       if (explicitFailed) {
         if (explicitFailed.step_name === stepName) return 'failed';
       } else {
@@ -985,7 +987,7 @@ export default function App() {
       }
     }
 
-    const dbStep = runSteps.find(s => s.step_name === stepName);
+    const dbStep = [...runSteps].reverse().find(s => s.step_name === stepName);
     
     if (stepName === 'generate_templates') {
       if (workflowStatus?.status === 'waiting_for_selection') {
@@ -1166,7 +1168,7 @@ export default function App() {
     if (selectedRun) {
       fetchRunDetails(selectedRun);
 
-      const isActive = selectedRun.status === 'running' || selectedRun.status === 'pending';
+      const isActive = selectedRun.status === 'running' || selectedRun.status === 'pending' || selectedRun.status === 'waiting_for_retry';
       if (isActive) {
         if (pollTimerRef.current) clearInterval(pollTimerRef.current);
         pollTimerRef.current = setInterval(async () => {
@@ -1217,7 +1219,7 @@ export default function App() {
       }
       
       // 2. Find the corresponding database step
-      let targetDbStep = runSteps.find(s => s.step_name === targetStepName);
+      let targetDbStep = [...runSteps].reverse().find(s => s.step_name === targetStepName);
       
       // 3. Fallback logic: if we are in auto mode and the active step doesn't have a DB record yet,
       // search backwards to find the last step that does have a DB record.
@@ -1225,7 +1227,7 @@ export default function App() {
         const activeIdx = getActiveStepIdx();
         for (let i = activeIdx - 1; i >= 0; i--) {
           const stepName = stepsConfig[i]?.name;
-          const dbStep = runSteps.find(s => s.step_name === stepName);
+          const dbStep = [...runSteps].reverse().find(s => s.step_name === stepName);
           if (dbStep) {
             targetDbStep = dbStep;
             break;
@@ -1330,6 +1332,7 @@ export default function App() {
       return;
     }
 
+    setManuallyInspectedStepName(null);
     setSubmittingHITL(true);
     try {
       const resumeRes = await fetch(`${API_BASE_URL}/pipeline/${selectedRun.workflow_id}/resume`, {
@@ -1365,7 +1368,24 @@ export default function App() {
     }
   };
 
-
+  // Retry Pipeline
+  const handleRetryWorkflow = async () => {
+    if (!selectedRun?.workflow_id) return;
+    
+    setManuallyInspectedStepName(null);
+    try {
+      const res = await fetch(`${API_BASE_URL}/pipeline/${selectedRun.workflow_id}/retry`, {
+        method: 'POST',
+        headers: getAuthHeaders()
+      });
+      if (!res.ok) {
+        throw new Error('Failed to trigger retry');
+      }
+      fetchRunDetails(selectedRun);
+    } catch (err) {
+      alert(`Error retrying workflow: ${err.message}`);
+    }
+  };
 
   // Login Screen Render
   if (!token) {
@@ -1771,7 +1791,7 @@ export default function App() {
                           cursor: 'pointer' 
                         }}
                         onClick={() => {
-                          const dbStep = runSteps.find(s => s.step_name === step.name);
+                          const dbStep = [...runSteps].reverse().find(s => s.step_name === step.name);
                           if (dbStep) {
                             setInspectedStep(dbStep);
                             setManuallyInspectedStepName(step.name);
@@ -1869,9 +1889,20 @@ export default function App() {
                     {/* Eligibility View */}
                     {inspectedStep.step_name === 'evaluate_eligibility' && (
                       <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <Icons.Info /> AI Eligibility Check Summary
-                        </h3>
+                        <div className="flex-between" style={{ marginBottom: '1rem' }}>
+                          <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <Icons.Info /> AI Eligibility Check Summary
+                          </h3>
+                          {(selectedRun?.status === 'failed' || workflowStatus?.status === 'waiting_for_retry') && (
+                            <button 
+                              onClick={handleRetryWorkflow} 
+                              className="btn-primary" 
+                              style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                            >
+                              <Icons.Refresh /> Retry Eligibility
+                            </button>
+                          )}
+                        </div>
                         <EligibilityView data={inspectedStep.output} />
                       </div>
                     )}
@@ -2110,7 +2141,7 @@ export default function App() {
                         <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                           <Icons.FileText /> Auto-filled Templates
                         </h3>
-                        <AutofillView data={inspectedStep.output} />
+                        <AutofillView data={runSteps.filter(s => s.step_name === 'autofill_template').map(s => s.output)} />
                       </div>
                     )}
 

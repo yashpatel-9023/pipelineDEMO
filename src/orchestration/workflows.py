@@ -86,6 +86,7 @@ class TenderBidWorkflow:
         self.selected_annexure_ids: Optional[List[str]] = None
         self.current_status: str = "pending"
         self.workflow_state: Dict[str, Any] = {}
+        self.retry_eligibility_signal: bool = False
 
     @workflow.run
     async def run(self, input_data: TenderPipelineInput) -> TenderPipelineResult:
@@ -117,39 +118,50 @@ class TenderBidWorkflow:
         workflow.logger.info(f"Summary activity completed for tender {input_data.tender_id}")
         self.workflow_state["summary_response"] = summary_response
 
-        eligibility_response = await workflow.execute_activity(
-            evaluate_eligibility,
-            input_data.payload,
-            **activity_kwargs,
-        )
-        workflow.logger.info(f"Eligibility activity completed for tender {input_data.tender_id}")
-        self.workflow_state["eligibility_response"] = eligibility_response
+        while True:
+            eligibility_response = await workflow.execute_activity(
+                evaluate_eligibility,
+                input_data.payload,
+                **activity_kwargs,
+            )
+            workflow.logger.info(f"Eligibility activity completed for tender {input_data.tender_id}")
+            self.workflow_state["eligibility_response"] = eligibility_response
 
-        eligibility_score = _extract_eligibility_score(eligibility_response)
-        eligibility_passed = eligibility_score >= get_settings().ELIGIBILITY_THRESHOLD
-        if not eligibility_passed:
-            self.current_status = "failed"
+            eligibility_score = _extract_eligibility_score(eligibility_response)
+            eligibility_passed = eligibility_score >= get_settings().ELIGIBILITY_THRESHOLD
+            if eligibility_passed:
+                break
+
+            self.current_status = "waiting_for_retry"
             await workflow.execute_activity(
                 update_final_pipeline_status,
                 {
                     "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
-                    "status": "failed",
+                    "status": "waiting_for_retry",
                     "result_payload": {
-                        "message": "Eligibility threshold not met",
+                        "message": "Eligibility threshold not met. Waiting for retry.",
                         "score": eligibility_score,
                     },
                 },
                 **activity_kwargs,
             )
-            return TenderPipelineResult(
-                status="failed",
-                eligibility_score=eligibility_score,
-                eligibility_passed=False,
-                final_response={
-                    "message": "Eligibility threshold not met",
-                    "score": eligibility_score,
+
+            await workflow.wait_condition(
+                lambda: self.retry_eligibility_signal,
+            )
+
+            self.retry_eligibility_signal = False
+            self.current_status = "running"
+            await workflow.execute_activity(
+                update_final_pipeline_status,
+                {
+                    "pipeline_run_id": input_data.payload.get("pipeline_run_id"),
+                    "status": "running",
+                    "result_payload": {
+                        "message": "Retrying eligibility check",
+                    },
                 },
-                workflow_state=self.workflow_state,
+                **activity_kwargs,
             )
 
         annexure_listing = await workflow.execute_activity(
@@ -275,6 +287,10 @@ class TenderBidWorkflow:
     @workflow.signal
     def select_annexures(self, annexure_ids: List[str]) -> None:
         self.selected_annexure_ids = annexure_ids
+
+    @workflow.signal
+    def retry_eligibility(self) -> None:
+        self.retry_eligibility_signal = True
 
     @workflow.query
     def status(self) -> Dict[str, Any]:

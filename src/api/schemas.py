@@ -33,6 +33,11 @@ class ResumePipelineResponse(BaseModel):
     status: str
 
 
+class RetryPipelineResponse(BaseModel):
+    workflow_id: str
+    status: str
+
+
 class DocumentUploadRequest(BaseModel):
     tender_id: str
     name: str

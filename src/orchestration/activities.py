@@ -242,7 +242,7 @@ async def autofill_template(payload: Dict[str, Any]) -> Dict[str, Any]:
         client = _get_service_client(AutofillService, "AUTOFILL_SERVICE_URL", "AUTOFILL_SERVICE_API_KEY", "http://localhost:8005")
         async def real_call():
             return await client.autofill(payload)
-        result = await safe_call(real_call, "autofill_template")
+        result = await safe_call(real_call, "autofill_template", payload)
         # Find annexure_id from template metadata (if provided)
         template_info = payload.get("template", {})
         annexure_code = payload.get("annexure_id") or template_info.get("annexure_id")
@@ -341,5 +341,15 @@ async def update_final_pipeline_status(params: Dict[str, Any]) -> None:
         elif status == "failed":
             update_pipeline_run_failed(db, UUID(pipeline_run_id), result_payload)
             logger.info(f"Pipeline run {pipeline_run_id} marked as failed")
+        elif status in ("waiting_for_retry", "running"):
+            from src.db.repository import update_pipeline_run_status
+            update_pipeline_run_status(
+                db, 
+                UUID(pipeline_run_id), 
+                status=status, 
+                current_step="evaluate_eligibility", 
+                result_payload=result_payload
+            )
+            logger.info(f"Pipeline run {pipeline_run_id} updated to {status}")
         else:
             logger.warning(f"Unknown status {status} for pipeline run {pipeline_run_id}")

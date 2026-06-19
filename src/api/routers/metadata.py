@@ -105,7 +105,7 @@ async def get_pipeline_steps(
             detail=f"Pipeline run {run_id} not found",
         )
 
-    steps = db.query(PipelineStep).filter(PipelineStep.pipeline_run_id == run_uuid).order_by(PipelineStep.step_order.asc()).all()
+    steps = db.query(PipelineStep).filter(PipelineStep.pipeline_run_id == run_uuid).order_by(PipelineStep.step_order.asc(), PipelineStep.created_at.asc()).all()
     return [
         {
             "id": str(s.id),
