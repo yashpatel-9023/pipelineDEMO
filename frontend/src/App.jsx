@@ -702,54 +702,105 @@ function FilledAnnexureRenderer({ filledData }) {
   );
 }
 
-function FinalResponseView({ run, artifacts, selectedTab, setSelectedTab }) {
-  if (!artifacts) return <p className="no-data">No artifacts available yet.</p>;
-  const displayArtifacts = getDisplayData(artifacts);
+function FinalResponseView({ run, token }) {
+  const [biddingDocs, setBiddingDocs] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    if (!run || !token) return;
+    const fetchDocs = async () => {
+      try {
+        const res = await fetch(`/pipeline/${run.workflow_id}/bidding-documents`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setBiddingDocs(data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch bidding docs", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDocs();
+    const interval = setInterval(fetchDocs, 5000);
+    return () => clearInterval(interval);
+  }, [run, token]);
+
+  const handleUpload = async (docId, file) => {
+    if (!file || !token) return;
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const res = await fetch(`/pipeline/${run.workflow_id}/bidding-documents/${docId}/upload`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` },
+        body: formData
+      });
+      if (res.ok) {
+        const updatedRes = await fetch(`/pipeline/${run.workflow_id}/bidding-documents`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (updatedRes.ok) {
+          setBiddingDocs(await updatedRes.json());
+        }
+      }
+    } catch (err) {
+      console.error("Upload failed", err);
+    }
+  };
+
+  if (loading && biddingDocs.length === 0) return <p className="no-data">Loading checklist...</p>;
 
   return (
     <div className="custom-card" style={{ padding: 0 }}>
       <div style={{ padding: '1.25rem', borderBottom: '1px solid hsl(var(--border-color))' }}>
-        <div className="final-response-header">
-          <div className="final-response-stat"><span className="final-response-label">Company:</span><span className="final-response-value">{run?.company_name}</span></div>
-          <div className="final-response-stat"><span className="final-response-label">Tender Ref:</span><span className="final-response-value">{run?.tender_reference}</span></div>
-          <div className="final-response-stat"><span className="final-response-label">Status:</span><span className="final-response-value">{run?.status}</span></div>
-        </div>
-        <div className="flex-between">
-          <span style={{ fontSize: '1rem', fontWeight: 600, color: 'hsl(var(--primary))' }}>Prepare Response</span>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <button className={`btn-secondary ${selectedTab === 'documents' ? 'btn-primary' : ''}`} style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', borderRadius: '4px' }} onClick={() => setSelectedTab('documents')}>Bidding Documents</button>
-            <button className={`btn-secondary ${selectedTab === 'annexures' ? 'btn-primary' : ''}`} style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', borderRadius: '4px' }} onClick={() => setSelectedTab('annexures')}>Filled Annexures</button>
-          </div>
-        </div>
+        <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'hsl(var(--primary))' }}>Final Bid Checklist</h3>
       </div>
-      <div style={{ padding: '1.25rem' }}>
-        {selectedTab === 'documents' ? (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {displayArtifacts?.bidding_documents?.map(doc => (
-              <div key={doc.id} className="eligibility-item">
-                <div className="flex-between" style={{ marginBottom: '0.5rem' }}>
-                  <h4 style={{ fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--primary))' }}>{doc.title || doc.document_type}</h4>
-                  <span className="badge badge-completed" style={{ fontSize: '0.65rem' }}>{doc.status}</span>
-                </div>
-                <BiddingDocumentRenderer doc={doc} />
-              </div>
+      <div className="table-responsive" style={{ padding: '1.25rem' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <thead>
+            <tr style={{ borderBottom: '1px solid hsl(var(--border-color))' }}>
+              <th style={{ padding: '0.75rem', fontWeight: 600, width: '40px' }}>#</th>
+              <th style={{ padding: '0.75rem', fontWeight: 600 }}>Checklist Document</th>
+              <th style={{ padding: '0.75rem', fontWeight: 600 }}>Mapped Document</th>
+              <th style={{ padding: '0.75rem', fontWeight: 600 }}>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {biddingDocs.map((doc, index) => (
+              <tr key={doc.id} style={{ borderBottom: '1px solid hsl(var(--border-color))', background: doc.status === 'missing' ? 'hsla(var(--destructive), 0.05)' : 'transparent' }}>
+                <td style={{ padding: '1rem 0.75rem', fontWeight: 500 }}>{index + 1}</td>
+                <td style={{ padding: '1rem 0.75rem' }}>{doc.title}</td>
+                <td style={{ padding: '1rem 0.75rem' }}>
+                  {doc.status === 'missing' ? (
+                    <span className="badge badge-failed">Missing</span>
+                  ) : (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span className="badge badge-completed">{doc.source === 'manual_upload' ? 'Uploaded' : (doc.source === 'filled_annexure' ? 'Auto-filled' : 'Company Doc')}</span>
+                      {doc.file_path && (
+                        <a href={`/pipeline/documents/preview?path=${encodeURIComponent(doc.file_path)}`} target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline', fontSize: '0.85rem' }}>Preview</a>
+                      )}
+                    </div>
+                  )}
+                </td>
+                <td style={{ padding: '1rem 0.75rem' }}>
+                  {doc.status === 'missing' || doc.source === 'manual_upload' ? (
+                    <input type="file" onChange={(e) => handleUpload(doc.id, e.target.files[0])} style={{ fontSize: '0.8rem', maxWidth: '200px' }} />
+                  ) : (
+                    <span style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))' }}>Auto-mapped</span>
+                  )}
+                </td>
+              </tr>
             ))}
-            {(!displayArtifacts?.bidding_documents || displayArtifacts.bidding_documents.length === 0) && <p className="no-data">No bidding documents generated.</p>}
-          </div>
-        ) : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {displayArtifacts?.filled_annexures?.map(fa => (
-              <div key={fa.id} className="eligibility-item">
-                <div className="flex-between" style={{ marginBottom: '0.5rem' }}>
-                  <h4 style={{ fontWeight: 600, fontSize: '0.95rem', color: 'hsl(var(--secondary))' }}>{fa.annexure_code}: {fa.annexure_title}</h4>
-                  <span className="badge badge-completed" style={{ fontSize: '0.65rem' }}>Filled</span>
-                </div>
-                <FilledAnnexureRenderer filledData={fa.filled_data} />
-              </div>
-            ))}
-            {(!displayArtifacts?.filled_annexures || displayArtifacts.filled_annexures.length === 0) && <p className="no-data">No annexures generated.</p>}
-          </div>
-        )}
+            {biddingDocs.length === 0 && (
+              <tr>
+                <td colSpan="4" style={{ padding: '1rem', textAlign: 'center' }}>No checklist documents found.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );
@@ -1977,9 +2028,7 @@ export default function App() {
                         <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem' }}>Generated Bid Artifacts</h3>
                         <FinalResponseView 
                           run={selectedRun} 
-                          artifacts={runArtifacts} 
-                          selectedTab={selectedArtifactTab} 
-                          setSelectedTab={setSelectedArtifactTab} 
+                          token={token}
                         />
                       </div>
                     )}

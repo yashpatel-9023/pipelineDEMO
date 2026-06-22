@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm import Session
 from uuid import UUID
 
@@ -147,3 +147,80 @@ async def retry_pipeline(
     # Note: DB status is handled by the workflow's activities
 
     return RetryPipelineResponse(workflow_id=workflow_id, status="retrying")
+
+from src.db.models import BiddingDocument, PipelineRun
+from fastapi.responses import FileResponse
+import os
+import shutil
+from pathlib import Path
+from typing import List, Dict, Any
+
+@router.get("/{workflow_id}/bidding-documents")
+async def get_bidding_documents(
+    workflow_id: str,
+    db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
+):
+    run = db.query(PipelineRun).filter(PipelineRun.workflow_id == workflow_id).first()
+    if not run:
+        raise HTTPException(status_code=404, detail="Pipeline run not found")
+        
+    docs = db.query(BiddingDocument).filter(
+        BiddingDocument.tender_id == run.tender_id,
+        BiddingDocument.company_id == run.company_id,
+        BiddingDocument.document_type == "checklist_item",
+        BiddingDocument.metadata_["workflow_id"].astext == workflow_id
+    ).all()
+    
+    return [
+        {
+            "id": str(doc.id),
+            "title": doc.title,
+            "status": doc.status,
+            "file_path": doc.file_path,
+            "source": doc.metadata_.get("source"),
+            "content_json": doc.content_json
+        } for doc in docs
+    ]
+
+@router.post("/{workflow_id}/bidding-documents/{doc_id}/upload")
+async def upload_missing_document(
+    workflow_id: str,
+    doc_id: UUID,
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db),
+    current_user: str = Depends(get_current_user),
+):
+    doc = db.query(BiddingDocument).filter(BiddingDocument.id == doc_id).first()
+    if not doc:
+        raise HTTPException(status_code=404, detail="Bidding document not found")
+        
+    storage_dir = Path("/app/storage/bidding_documents")
+    storage_dir.mkdir(parents=True, exist_ok=True)
+    
+    file_ext = os.path.splitext(file.filename)[1]
+    safe_filename = f"{doc.tender_id}_{doc.company_id}_{doc_id}{file_ext}"
+    file_path = storage_dir / safe_filename
+    
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+        
+    doc.file_path = str(file_path)
+    doc.status = "mapped"
+    
+    # Metadata update
+    meta = dict(doc.metadata_)
+    meta["source"] = "manual_upload"
+    doc.metadata_ = meta
+    
+    db.commit()
+    
+    return {"message": "File uploaded successfully", "file_path": str(file_path)}
+
+@router.get("/documents/preview")
+async def preview_document(
+    path: str,
+):
+    if not path or not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="File not found")
+    return FileResponse(path)

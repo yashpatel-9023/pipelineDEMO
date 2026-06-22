@@ -11,7 +11,7 @@ from src.core.logging import get_logger
 from src.core.config import get_settings
 from src.utils.mock_loader import load_mock_response
 from src.db.base import SessionLocal
-from src.db.models import Annexure
+from src.db.models import Annexure, Document, FilledAnnexure
 from src.db.repository import (
     create_pipeline_step,
     update_pipeline_step,
@@ -285,18 +285,82 @@ async def generate_final_response(payload: Dict[str, Any]) -> Dict[str, Any]:
         client = _get_service_client(FinalResponseService, "FINAL_RESPONSE_SERVICE_URL", "FINAL_RESPONSE_SERVICE_API_KEY", "http://localhost:8006")
         async def real_call():
             return await client.generate_final_response(payload)
-        result = await safe_call(real_call, "generate_final_response")
-        # Store final bid document
+        result = await safe_call(real_call, "generate_final_response", payload)
+        
+        from src.utils.pdf_generator import generate_pdf_from_html
+        import re
+
         with SessionLocal() as db:
-            create_bidding_document_with_tender_company(
-                db,
-                tender_id=tender_id,
-                company_id=company_id,
-                document_type="final_bid",
-                title=f"Bid Response for Tender {tender_id}",
-                content_json=result,
-                metadata_={"generated_by": "Temporal workflow"},
-            )
+            checklist = result.get("Data", [])
+            if not checklist and "results" in result:
+                checklist = result.get("results", [])
+                
+            from src.utils.matching import semantic_match
+            
+            # Fetch all company docs for this tender
+            all_company_docs = db.query(Document).filter(
+                Document.tender_id == tender_id,
+                Document.document_type == 'company_profile'
+            ).all()
+            company_doc_names = [d.name for d in all_company_docs if d.name]
+            company_docs_map = {d.name: d for d in all_company_docs if d.name}
+            
+            # Fetch all filled annexures
+            all_filled_annexures = db.query(FilledAnnexure).filter(
+                FilledAnnexure.tender_id == tender_id,
+                FilledAnnexure.company_id == company_id
+            ).all()
+            annexure_titles = [fa.raw_response.get("title", "") for fa in all_filled_annexures if fa.raw_response.get("title")]
+            annexures_map = {fa.raw_response.get("title", ""): fa for fa in all_filled_annexures if fa.raw_response.get("title")}
+            
+            for item in checklist:
+                doc_name = item.get("document_name") or item.get("title") or "Unknown Document"
+                
+                # Check company documents using semantic match
+                matched_company_doc_name = semantic_match(doc_name, company_doc_names, threshold=0.3)
+                company_doc = company_docs_map.get(matched_company_doc_name) if matched_company_doc_name else None
+                
+                # Check filled annexures using semantic match
+                matched_annexure_title = semantic_match(doc_name, annexure_titles, threshold=0.3)
+                matched_annexure = annexures_map.get(matched_annexure_title) if matched_annexure_title else None
+                
+                status = "missing"
+                file_path = None
+                source = "none"
+                
+                if company_doc and company_doc.storage_path:
+                    status = "mapped"
+                    file_path = company_doc.storage_path
+                    source = "company_document"
+                elif matched_annexure:
+                    status = "mapped"
+                    source = "filled_annexure"
+                    html_content = matched_annexure.raw_response.get("filled_template", "")
+                    if html_content:
+                        safe_name = re.sub(r'[^A-Za-z0-9_\-\.]', '_', doc_name)
+                        pdf_filename = f"{tender_id}_{safe_name}.pdf"
+                        try:
+                            file_path = generate_pdf_from_html(html_content, pdf_filename)
+                        except Exception as e:
+                            logger.error(f"Failed to generate PDF for {doc_name}: {e}")
+                            file_path = None
+                            status = "missing"
+
+                # Import dynamically to avoid circular issues
+                from src.db.repository import create_bidding_document_with_tender_company
+                doc = create_bidding_document_with_tender_company(
+                    db,
+                    tender_id=tender_id,
+                    company_id=company_id,
+                    document_type="checklist_item",
+                    title=doc_name,
+                    file_path=file_path,
+                    content_json=item,
+                    metadata_={"source": source, "generated_by": "Temporal workflow", "workflow_id": activity.info().workflow_id},
+                )
+                doc.status = status
+                db.commit()
+
         await _record_step_complete(step_id, result)
         logger.info(f"generate_final_response completed", extra={"pipeline_run_id": pipeline_run_id, "tender_id": tender_id, "company_id": company_id})
         return result

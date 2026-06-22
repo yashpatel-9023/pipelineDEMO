@@ -80,6 +80,7 @@ services:
       - "./Drone-TenderID-99896935:/app/Drone-TenderID-99896935"
       - ./scripts:/app/scripts
       - ./JSONS:/app/JSONS
+      - ./storage:/app/storage
 
   worker:
     build:
@@ -100,6 +101,7 @@ services:
       - ./src:/app/src
       - ./scripts:/app/scripts
       - ./JSONS:/app/JSONS
+      - ./storage:/app/storage
     command: ["python", "-m", "src.workers.temporal_worker"]
 
 volumes:
