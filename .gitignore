@@ -2,3 +2,5 @@
 .env.example
 .venv
 frontendplan.md
+package-lock.json
+storage
