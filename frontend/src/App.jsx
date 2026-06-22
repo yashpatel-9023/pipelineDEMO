@@ -75,7 +75,7 @@ function SafeHtmlPreview({ html, maxHeight = '400px' }) {
         borderRadius: '6px',
         display: 'block'
       }}
-      sandbox="allow-same-origin"
+      sandbox="allow-scripts allow-same-origin"
     />
   );
 }
