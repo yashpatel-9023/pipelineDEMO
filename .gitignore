@@ -3,4 +3,4 @@
 .venv
 frontendplan.md
 package-lock.json
-storage
+storage/bidding_documents/
