@@ -16,7 +16,6 @@ from .activities import (
     generate_final_response,
     generate_templates,
     list_annexures,
-    notify_human_for_annexure_selection,
     update_final_pipeline_status
 )
 
@@ -190,28 +189,10 @@ class TenderBidWorkflow:
         workflow.logger.info(f"Template generation activity completed for tender {input_data.tender_id}")
         self.workflow_state["template_response"] = template_response
 
-        # Build full annexure items list for notification
-        await workflow.execute_activity(
-            notify_human_for_annexure_selection,
-            args=[
-                input_data.tender_id,
-                input_data.company_id,
-                annexure_items,
-            ],
-            **activity_kwargs,
-        )
-        workflow.logger.info(f"Annexure selection notification activity completed for tender {input_data.tender_id}")
-        self.current_status = "waiting_for_selection"
-        if self.selected_annexure_ids is None:
-            await workflow.wait_condition(
-                lambda: self.selected_annexure_ids is not None,
-                timeout=timedelta(seconds=input_data.selection_signal_timeout_seconds),
-            )
-
         self.current_status = "selected"
-        # Use signal-provided IDs, or fallback to all extracted codes if signal missing
+        # Auto-select all annexures without human approval
         all_ids = [item.get("annexure_id") for item in annexure_items if item.get("annexure_id")]
-        selected_ids = self.selected_annexure_ids if self.selected_annexure_ids is not None else all_ids
+        selected_ids = all_ids
         self.workflow_state["selected_annexures"] = selected_ids
 
         # Filter the generated templates to only keep selected ones

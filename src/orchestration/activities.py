@@ -21,7 +21,6 @@ from src.db.repository import (
     create_bidding_document_with_tender_company,
 )
 
-from .human_tasks import build_annexure_selection_notification
 from ..services.annexure_listing_service import AnnexureListingService
 from ..services.autofill_service import AutofillService
 from ..services.base_api_client import ApiServiceError
@@ -368,12 +367,7 @@ async def generate_final_response(payload: Dict[str, Any]) -> Dict[str, Any]:
         await _record_step_failed(step_id, {"error": str(e)})
         raise
 
-# ─────────────────────────────────────────────────────────────
-# Activity 7: Notify Human (no DB write)
-# ─────────────────────────────────────────────────────────────
-@activity.defn
-async def notify_human_for_annexure_selection(tender_id: str, company_id: str, annexure_list: List[Dict[str, Any]]) -> Dict[str, Any]:
-    return build_annexure_selection_notification(tender_id, company_id, annexure_list)
+
 
 # ─────────────────────────────────────────────────────────────
 # Activity 8: Update pipeline run status (final step)
