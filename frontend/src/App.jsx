@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // API BASE URL - change to your backend server (e.g., http://localhost:8000)
 // You can also set REACT_APP_API_URL in .env for flexibility
 // ─────────────────────────────────────────────────────────────────────────────
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // UTILITY: Extract meaningful content from wrapped API responses
@@ -632,8 +632,7 @@ function EligibilityView({ data }) {
           <span style={{ 
             fontSize: '1rem', 
             fontWeight: 800, 
-            color: scoreVal >= 70 ? 'hsl(var(--success))' : scoreVal >= 40 ? 'hsl(var(--warning))' : 'hsl(var(--danger))',
-            background: 'rgba(0,0,0,0.2)',
+            color: scoreVal === 100 ? 'hsl(var(--success))' : 'hsl(var(--danger))',            background: 'rgba(0,0,0,0.2)',
             padding: '0.2rem 0.6rem',
             borderRadius: '6px',
             border: '1px solid hsla(var(--border-color), 0.8)'
@@ -1441,60 +1440,35 @@ export default function App() {
   // Login Screen Render
   if (!token) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', padding: '1rem' }}>
-        <div className="glass-panel" style={{ width: '100%', maxWidth: '420px', padding: '2.5rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div style={{ 
-              display: 'inline-flex', 
-              padding: '1rem', 
-              borderRadius: '50%', 
-              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15))',
-              color: 'hsl(var(--primary))',
-              marginBottom: '1rem',
-              border: '1px solid rgba(99, 102, 241, 0.2)'
-            }}>
-              <Icons.Login />
-            </div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.025em', marginBottom: '0.25rem' }}>
-              Tender Orchestrator
-            </h1>
-            <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.875rem' }}>
-              Durable AI Bidding & Document Pipeline
-            </p>
-          </div>
+      <div className="login-scene">
+        <div className="login-bg">
+          <div className="login-bg-orb"></div>
+          <div className="login-bg-orb"></div>
+          <div className="login-bg-orb"></div>
+        </div>
+        <div className="login-grid"></div>
+        <div className="login-card">
+          <div className="login-logo-wrap">T</div>
+          <h1 className="login-title">Tender Orchestrator</h1>
+          <p className="login-subtitle">Durable AI Bidding &amp; Document Pipeline</p>
 
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div className="input-group">
               <label>Username</label>
-              <input
-                type="text"
-                className="input-control"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter username"
-                required
-              />
+              <input type="text" className="input-control" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" required />
             </div>
-
             <div className="input-group">
               <label>Password</label>
-              <input
-                type="password"
-                className="input-control"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-                required
-              />
+              <input type="password" className="input-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter password" required />
             </div>
 
             {loginError && (
-              <div style={{ color: 'hsl(var(--danger))', fontSize: '0.85rem', fontWeight: 500 }}>
+              <div style={{ color: 'hsl(var(--danger))', fontSize: '0.85rem', fontWeight: 600, background: 'hsla(var(--danger), 0.08)', padding: '0.6rem 0.8rem', borderRadius: '8px', border: '1px solid hsla(var(--danger), 0.12)' }}>
                 ⚠️ {loginError}
               </div>
             )}
 
-            <button type="submit" className="btn-primary" style={{ justifyContent: 'center', marginTop: '0.5rem' }}>
+            <button type="submit" className="btn-primary" style={{ justifyContent: 'center', width: '100%', marginTop: '0.25rem' }}>
               Sign In to Dashboard
             </button>
           </form>
@@ -1503,344 +1477,302 @@ export default function App() {
     );
   }
 
-  // ========== RENDER DASHBOARD / PIPELINE ==========
+  // Computed stats
+  const completedRuns = runs.filter(r => r.status === 'completed').length;
+  const activeRuns = runs.filter(r => r.status === 'running' || r.status === 'pending' || r.status === 'waiting_for_selection').length;
+  const failedRuns = runs.filter(r => r.status === 'failed').length;
+
+  // ========== MAIN APP WITH SIDEBAR ==========
   return (
-    <div>
-      {/* Premium Header */}
-      <header className="glass-panel" style={{ borderRadius: 0, borderTop: 0, borderLeft: 0, borderRight: 0, padding: '1rem 2rem', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div className="container" style={{ padding: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '100%' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }} onClick={() => { setCurrentView('dashboard'); setSelectedRun(null); }}>
-            <div style={{ 
-              width: '32px', 
-              height: '32px', 
-              borderRadius: '8px', 
-              background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 800,
-              fontSize: '1rem',
-              color: 'white',
-              boxShadow: 'var(--shadow-glow)'
-            }}>
-              T
-            </div>
-            <div>
-              <h2 style={{ fontSize: '1.1rem', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.2 }}>Tender Bid Orchestrator</h2>
-              <span style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                System Online <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'hsl(var(--success))', display: 'inline-block' }}></span>
-              </span>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <a 
-              href="http://localhost:8088" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-secondary" 
-              style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.35rem', borderRadius: '6px' }}
-            >
-              Temporal Dashboard <Icons.ExternalLink />
-            </a>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1rem', borderLeft: '1px solid hsl(var(--border-color))' }}>
-              <div style={{ textAlign: 'right' }}>
-                <p style={{ fontSize: '0.85rem', fontWeight: 600 }}>{username}</p>
-                <p style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>Orchestrator Admin</p>
-              </div>
-              <button 
-                onClick={handleLogout} 
-                className="btn-secondary" 
-                style={{ padding: '0.5rem', borderRadius: '6px', color: 'hsl(var(--danger))' }}
-                title="Log Out"
-              >
-                <Icons.Logout />
-              </button>
-            </div>
+    <div className="app-shell">
+      {/* ═══ SIDEBAR ═══ */}
+      <aside className="sidebar">
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">T</div>
+          <div className="sidebar-brand-text">
+            <h1>Tender Orchestrator</h1>
+            <span>AI Pipeline Engine <span className="online-dot"></span></span>
           </div>
         </div>
-      </header>
 
-      {/* Main View Container */}
-      <main className="container">
-        {currentView === 'dashboard' ? (
-          <div className="grid" style={{ gridTemplateColumns: '1fr 2fr', alignItems: 'start' }}>
-            
-            {/* Left Column: Launch Form */}
-            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.25rem' }}>Execute Pipeline</h3>
-                <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem' }}>Create durable Temporal bid workflow</p>
-              </div>
+        <nav className="sidebar-nav">
+          <div className="sidebar-section-label">Navigation</div>
+          <button
+            className={`sidebar-nav-item ${currentView === 'dashboard' ? 'sidebar-nav-item--active' : ''}`}
+            onClick={() => { setCurrentView('dashboard'); setSelectedRun(null); }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </button>
+          {selectedRun && (
+            <button
+              className={`sidebar-nav-item ${currentView === 'pipeline' ? 'sidebar-nav-item--active' : ''}`}
+              onClick={() => setCurrentView('pipeline')}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Pipeline Monitor
+            </button>
+          )}
 
-              <div className="input-group">
-                <label>Target Company Profile</label>
-                <select 
-                  className="input-control" 
-                  value={selectedCompanyId} 
-                  onChange={(e) => setSelectedCompanyId(e.target.value)}
-                >
-                  {companies.map(c => (
-                    <option key={c.id} value={c.id}>{c.name} ({c.country})</option>
-                  ))}
-                </select>
-              </div>
+          <div className="sidebar-section-label">Quick Links</div>
+          <a
+            href={`http://${window.location.hostname}:8088`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sidebar-nav-item"
+            style={{ textDecoration: 'none' }}
+          >
+            <Icons.ExternalLink />
+            Temporal Dashboard
+          </a>
+        </nav>
 
-              <div className="input-group">
-                <label>Tender Document Reference</label>
-                <select 
-                  className="input-control" 
-                  value={selectedTenderId} 
-                  onChange={(e) => setSelectedTenderId(e.target.value)}
-                >
-                  {tenders.map(t => (
-                    <option key={t.id} value={t.id}>{t.tender_reference}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="input-group">
-                <label>HITL Signal Timeout (Seconds)</label>
-                <input 
-                  type="number" 
-                  className="input-control" 
-                  value={signalTimeout} 
-                  onChange={(e) => setSignalTimeout(parseInt(e.target.value))} 
-                />
-              </div>
-
-              <div className="input-group">
-                <label>Workflow Input Payload (JSON)</label>
-                <textarea 
-                  className="input-control" 
-                  style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', height: '100px', resize: 'vertical' }}
-                  value={customPayload}
-                  onChange={(e) => setCustomPayload(e.target.value)}
-                />
-              </div>
-
-              {pipelineError && (
-                <div style={{ color: 'hsl(var(--danger))', fontSize: '0.85rem', fontWeight: 500, background: 'hsla(var(--danger), 0.1)', padding: '0.75rem', borderRadius: '6px' }}>
-                  ⚠️ {pipelineError}
-                </div>
-              )}
-
-              <button 
-                onClick={handleStartPipeline} 
-                className="btn-primary" 
-                style={{ width: '100%', justifyContent: 'center' }}
-                disabled={startLoading || companies.length === 0 || tenders.length === 0}
-              >
-                {startLoading ? 'Spawning Workflow...' : <><Icons.Play /> Start AI Pipeline</>}
-              </button>
-            </div>
-
-            {/* Right Column: Run History */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="glass-panel" style={{ padding: '2rem' }}>
-                <div className="flex-between" style={{ marginBottom: '1.5rem' }}>
-                  <div>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.25rem' }}>Pipeline Executions</h3>
-                    <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem' }}>Durable runs persisted in PostgreSQL</p>
-                  </div>
-                  <button onClick={fetchMetadata} className="btn-secondary" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem' }}>
-                    <Icons.Refresh /> Refresh
-                  </button>
-                </div>
-
-                <div className="table-container">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Workflow ID</th>
-                        <th>Tender Ref</th>
-                        <th>Company Name</th>
-                        <th>Status</th>
-                        <th>Triggered At</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {runs.length === 0 ? (
-                        <tr>
-                          <td colSpan="6" style={{ textAlign: 'center', padding: '3rem', color: 'hsl(var(--text-secondary))' }}>
-                            No pipeline runs found. Click "Start AI Pipeline" to trigger the first run!
-                          </td>
-                        </tr>
-                      ) : (
-                        runs.map(run => {
-                          const date = new Date(run.created_at);
-                          return (
-                            <tr key={run.id}>
-                              <td style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'hsl(var(--primary))' }} title={run.workflow_id}>
-                                {run.workflow_id.length > 25 ? run.workflow_id.substring(0, 25) + '...' : run.workflow_id}
-                              </td>
-                              <td style={{ fontWeight: 500 }}>{run.tender_reference}</td>
-                              <td>{run.company_name}</td>
-                              <td>
-                                <span className={`badge badge-${run.status}`}>
-                                  {run.status === 'waiting_for_selection' ? 'Reviewing' : run.status}
-                                </span>
-                              </td>
-                              <td style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))' }}>
-                                {date.toLocaleDateString()} {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                              </td>
-                              <td>
-                                <button 
-                                  onClick={() => { setSelectedRun(run); setCurrentView('pipeline'); }} 
-                                  className="btn-secondary" 
-                                  style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
-                                >
-                                  <Icons.Eye /> Monitor
-                                </button>
-                              </td>
-                            </tr>
-                          );
-                        })
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* Seeded Data Information */}
-              <div className="glass-panel" style={{ padding: '2rem' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>Available Local Seed Profiles</h3>
-                <div className="grid grid-cols-2">
-                  <div className="glass-panel" style={{ padding: '1.25rem', background: 'rgba(255,255,255,0.01)', borderRadius: '10px' }}>
-                    <h4 style={{ fontWeight: 600, fontSize: '0.9rem', color: 'hsl(var(--primary))', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                      <Icons.FileText /> Company Files
-                    </h4>
-                    <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginBottom: '0.5rem' }}>
-                      <strong>18 documents</strong> uploaded for eligibility checking and template autofilling.
-                    </p>
-                    <ul style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))', paddingLeft: '1.2rem' }}>
-                      <li>Financial Audit Certificates (Work Experience)</li>
-                      <li>Tax Registration documents (PAN, TAN, GST)</li>
-                      <li>Quality assurance credentials (ISO, BIS)</li>
-                    </ul>
-                  </div>
-
-                  <div className="glass-panel" style={{ padding: '1.25rem', background: 'rgba(255,255,255,0.01)', borderRadius: '10px' }}>
-                    <h4 style={{ fontWeight: 600, fontSize: '0.9rem', color: 'hsl(var(--secondary))', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                      <Icons.FileText /> Tender Attachment Files
-                    </h4>
-                    <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginBottom: '0.5rem' }}>
-                      <strong>15 PDF/HTML specifications</strong> extracted for AI parsing and requirements checklists.
-                    </p>
-                    <ul style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))', paddingLeft: '1.2rem' }}>
-                      <li>Scope of Work documents</li>
-                      <li>Technical requirement attachments</li>
-                      <li>Pre-qualification annexure templates</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className="sidebar-footer">
+          <div className="sidebar-user">
+            <span className="sidebar-user-name">{username}</span>
+            <span className="sidebar-user-role">Orchestrator Admin</span>
           </div>
-        ) : (
-          /* Pipeline Visualizer View */
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            
-            {/* Controls Bar */}
-            <div className="glass-panel" style={{ padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <button onClick={() => { setCurrentView('dashboard'); setSelectedRun(null); }} className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.2rem' }}>
-                <Icons.ArrowLeft /> Back to Dashboard
-              </button>
+          <button onClick={handleLogout} className="sidebar-logout-btn" title="Sign Out">
+            <Icons.Logout />
+          </button>
+        </div>
+      </aside>
 
-              <div style={{ textAlign: 'center' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 800 }}>Workflow: {selectedRun?.workflow_id}</h3>
-                <p style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>
-                  Status: <span className={`badge badge-${selectedRun?.status}`} style={{ fontSize: '0.65rem', padding: '0.1rem 0.5rem' }}>{selectedRun?.status}</span>
-                </p>
+      {/* ═══ MAIN CONTENT ═══ */}
+      <div className="main-area">
+        <div className="main-scroll">
+
+          {currentView === 'dashboard' ? (
+            <>
+              {/* Page Header */}
+              <div className="page-header">
+                <h2>Dashboard</h2>
+                <p>Manage AI pipeline workflows and monitor bid document generation</p>
               </div>
 
-              <button onClick={() => fetchRunDetails(selectedRun)} className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', padding: '0.6rem 1.2rem' }}>
-                <Icons.Refresh /> Refresh State
-              </button>
-            </div>
+              {/* Stats Row */}
+              <div className="stats-row">
+                <div className="stat-card">
+                  <div className="stat-icon stat-icon--blue">
+                    <Icons.History />
+                  </div>
+                  <div>
+                    <div className="stat-value">{runs.length}</div>
+                    <div className="stat-label">Total Runs</div>
+                  </div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon stat-icon--green">
+                    <Icons.Check />
+                  </div>
+                  <div>
+                    <div className="stat-value">{completedRuns}</div>
+                    <div className="stat-label">Completed</div>
+                  </div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon stat-icon--amber">
+                    <Icons.Play />
+                  </div>
+                  <div>
+                    <div className="stat-value">{activeRuns}</div>
+                    <div className="stat-label">Active</div>
+                  </div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon stat-icon--violet">
+                    <Icons.FileText />
+                  </div>
+                  <div>
+                    <div className="stat-value">{companies.length}</div>
+                    <div className="stat-label">Companies</div>
+                  </div>
+                </div>
+              </div>
 
-            {/* Visual Stepper */}
-            <div className="glass-panel" style={{ padding: '3rem 2rem' }}>
-              <div style={{ position: 'relative', width: '100%' }}>
-                
-                <div style={{ 
-                  position: 'absolute', 
-                  top: '24px', 
-                  left: '60px', 
-                  right: '60px', 
-                  height: '4px', 
-                  backgroundColor: 'hsl(var(--border-color))',
-                  zIndex: 1 
-                }}></div>
+              {/* Dashboard Grid: Launch Form + Run History */}
+              <div className="dash-grid">
+                {/* Launch Form Panel */}
+                <div className="panel">
+                  <div className="panel-header">
+                    <div>
+                      <h3>Execute Pipeline</h3>
+                      <p>Create durable Temporal bid workflow</p>
+                    </div>
+                    <Icons.Play />
+                  </div>
+                  <div className="panel-body" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                    <div className="input-group">
+                      <label>Target Company Profile</label>
+                      <select className="input-control" value={selectedCompanyId} onChange={(e) => setSelectedCompanyId(e.target.value)}>
+                        {companies.map(c => (
+                          <option key={c.id} value={c.id}>{c.name} ({c.country})</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input-group">
+                      <label>Tender Document Reference</label>
+                      <select className="input-control" value={selectedTenderId} onChange={(e) => setSelectedTenderId(e.target.value)}>
+                        {tenders.map(t => (
+                          <option key={t.id} value={t.id}>{t.tender_reference}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input-group">
+                      <label>HITL Signal Timeout (s)</label>
+                      <input type="number" className="input-control" value={signalTimeout} onChange={(e) => setSignalTimeout(parseInt(e.target.value))} />
+                    </div>
+                    <div className="input-group">
+                      <label>Workflow Input Payload (JSON)</label>
+                      <textarea
+                        className="input-control"
+                        style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', height: '90px', resize: 'vertical' }}
+                        value={customPayload}
+                        onChange={(e) => setCustomPayload(e.target.value)}
+                      />
+                    </div>
 
-                <div style={{ 
-                  position: 'absolute', 
-                  top: '24px', 
-                  left: '60px', 
-                  width: `calc((100% - 120px) * ${getActiveStepIdx() / (stepsConfig.length - 1)})`,
-                  height: '4px', 
-                  background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)))',
-                  zIndex: 2,
-                  transition: 'width 0.5s ease'
-                }}></div>
+                    {pipelineError && (
+                      <div style={{ color: 'hsl(var(--danger))', fontSize: '0.85rem', fontWeight: 500, background: 'hsla(var(--danger), 0.06)', padding: '0.65rem', borderRadius: '8px', border: '1px solid hsla(var(--danger), 0.1)' }}>
+                        ⚠️ {pipelineError}
+                      </div>
+                    )}
 
-                <div style={{ 
-                  display: 'flex', 
-                  justifyContent: 'space-between', 
-                  position: 'relative', 
-                  width: '100%',
-                  zIndex: 3
-                }}>
+                    <button
+                      onClick={handleStartPipeline}
+                      className="btn-primary"
+                      style={{ width: '100%', justifyContent: 'center' }}
+                      disabled={startLoading || companies.length === 0 || tenders.length === 0}
+                    >
+                      {startLoading ? 'Spawning Workflow...' : <><Icons.Play /> Start AI Pipeline</>}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Column: Runs + Seed Data */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {/* Run History Panel */}
+                  <div className="panel">
+                    <div className="panel-header">
+                      <div>
+                        <h3>Pipeline Executions</h3>
+                        <p>Durable runs persisted in PostgreSQL</p>
+                      </div>
+                      <button onClick={fetchMetadata} className="btn-ghost">
+                        <Icons.Refresh /> Refresh
+                      </button>
+                    </div>
+                    <div className="panel-body">
+                      {runs.length === 0 ? (
+                        <div className="empty-state">
+                          <Icons.History />
+                          <h4>No runs yet</h4>
+                          <p>Click "Start AI Pipeline" to trigger the first run</p>
+                        </div>
+                      ) : (
+                        <div className="run-list">
+                          {runs.map(run => {
+                            const date = new Date(run.created_at);
+                            const statusClass = run.status === 'completed' ? 'completed' : run.status === 'running' || run.status === 'pending' ? 'running' : run.status === 'failed' ? 'failed' : 'pending';
+                            return (
+                              <div
+                                key={run.id}
+                                className="run-card"
+                                onClick={() => { setSelectedRun(run); setCurrentView('pipeline'); }}
+                              >
+                                <div className={`run-card-icon run-card-icon--${statusClass}`}>
+                                  {statusClass === 'completed' ? <Icons.Check /> : statusClass === 'failed' ? <Icons.Warning /> : <Icons.Play />}
+                                </div>
+                                <div className="run-card-info">
+                                  <div className="run-card-title">{run.tender_reference}</div>
+                                  <div className="run-card-meta">
+                                    <span>{run.company_name}</span>
+                                    <span>·</span>
+                                    <span>{date.toLocaleDateString()} {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                  </div>
+                                </div>
+                                <div className="run-card-badge">
+                                  <span className={`badge badge-${run.status}`}>
+                                    {run.status === 'waiting_for_selection' ? 'Reviewing' : run.status}
+                                  </span>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Seed Data */}
+                  <div className="seed-grid">
+                    <div className="seed-card">
+                      <div className="seed-card-header">
+                        <div className="seed-card-icon" style={{ background: 'hsla(var(--primary), 0.1)', color: 'hsl(var(--primary))' }}>
+                          <Icons.FileText />
+                        </div>
+                        <h4 style={{ color: 'hsl(var(--primary))' }}>Company Files</h4>
+                      </div>
+                      <p><strong>18 documents</strong> uploaded for eligibility checking and template autofilling.</p>
+                      <ul>
+                        <li>Financial Audit Certificates (Work Experience)</li>
+                        <li>Tax Registration documents (PAN, TAN, GST)</li>
+                        <li>Quality assurance credentials (ISO, BIS)</li>
+                      </ul>
+                    </div>
+                    <div className="seed-card">
+                      <div className="seed-card-header">
+                        <div className="seed-card-icon" style={{ background: 'hsla(var(--secondary), 0.1)', color: 'hsl(var(--secondary))' }}>
+                          <Icons.FileText />
+                        </div>
+                        <h4 style={{ color: 'hsl(var(--secondary))' }}>Tender Attachments</h4>
+                      </div>
+                      <p><strong>15 PDF/HTML specifications</strong> extracted for AI parsing and checklists.</p>
+                      <ul>
+                        <li>Scope of Work documents</li>
+                        <li>Technical requirement attachments</li>
+                        <li>Pre-qualification annexure templates</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            /* ═══ PIPELINE VIEW ═══ */
+            <>
+              {/* Back + Run Banner */}
+              <div className="run-banner">
+                <div className="run-banner-left">
+                  <button onClick={() => { setCurrentView('dashboard'); setSelectedRun(null); }} className="btn-ghost">
+                    <Icons.ArrowLeft /> Back
+                  </button>
+                  <div>
+                    <div className="run-banner-id" title={selectedRun?.workflow_id}>{selectedRun?.workflow_id}</div>
+                    <span className={`badge badge-${selectedRun?.status}`} style={{ fontSize: '0.65rem' }}>
+                      {selectedRun?.status}
+                    </span>
+                  </div>
+                </div>
+                <button onClick={() => fetchRunDetails(selectedRun)} className="btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.82rem' }}>
+                  <Icons.Refresh /> Refresh
+                </button>
+              </div>
+
+              {/* Split: Timeline Sidebar + Content */}
+              <div className="pipeline-split">
+                {/* Vertical Timeline */}
+                <div className="v-timeline">
+                  <div className="v-timeline-title">Pipeline Steps</div>
                   {stepsConfig.map((step, idx) => {
                     const status = getStepStatus(step.name);
-                    const isActive = idx === getActiveStepIdx();
                     const isInspected = inspectedStep?.step_name === step.name;
-                    
-                    let circleClass = 'pending';
-                    let styleGlow = {};
-                    if (status === 'completed') {
-                      circleClass = 'completed';
-                    } else if (status === 'in_progress' || status === 'running') {
-                      circleClass = 'running';
-                      styleGlow = { boxShadow: '0 0 15px hsla(var(--primary), 0.6)', border: '2px solid hsl(var(--primary))' };
-                    } else if (status === 'waiting') {
-                      circleClass = 'waiting';
-                      styleGlow = { boxShadow: '0 0 15px hsla(var(--warning), 0.6)', border: '2px solid hsl(var(--warning))' };
-                    } else if (status === 'failed') {
-                      circleClass = 'failed';
-                    }
-
-                    // Apply active step pulsing/highlight style
-                    if (isActive) {
-                      const glowColor = circleClass === 'completed' ? '16, 185, 129' : circleClass === 'waiting' ? '245, 158, 11' : circleClass === 'failed' ? '244, 63, 94' : '99, 102, 241';
-                      styleGlow = {
-                        ...styleGlow,
-                        boxShadow: `0 0 0 4px rgba(${glowColor}, 0.3), 0 0 20px rgba(${glowColor}, 0.55)`,
-                        transform: 'scale(1.08)'
-                      };
-                    }
-
-                    // Apply inspected step outline style
-                    if (isInspected) {
-                      styleGlow = {
-                        ...styleGlow,
-                        border: '3px solid #ffffff',
-                      };
-                    }
+                    const isLast = idx === stepsConfig.length - 1;
 
                     return (
-                      <div 
-                        key={step.name} 
-                        style={{ 
-                          display: 'flex', 
-                          flexDirection: 'column', 
-                          alignItems: 'center', 
-                          width: '120px', 
-                          cursor: 'pointer' 
-                        }}
+                      <div
+                        key={step.name}
+                        className={`v-step ${isInspected ? 'v-step--inspected' : ''} ${status === 'pending' ? 'v-step--pending' : ''}`}
                         onClick={() => {
                           const dbStep = [...runSteps].reverse().find(s => s.step_name === step.name);
                           if (dbStep) {
@@ -1849,408 +1781,344 @@ export default function App() {
                           }
                         }}
                       >
-                        <div 
-                          style={{ 
-                            width: '48px', 
-                            height: '48px', 
-                            borderRadius: '50%', 
-                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                            background: circleClass === 'completed' 
-                              ? 'linear-gradient(135deg, hsl(var(--success)), #059669)'
-                              : circleClass === 'running'
-                              ? 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))'
-                              : circleClass === 'waiting'
-                              ? 'linear-gradient(135deg, hsl(var(--warning)), #d97706)'
-                              : circleClass === 'failed'
-                              ? 'linear-gradient(135deg, hsl(var(--danger)), #e11d48)'
-                              : 'hsl(var(--bg-main))',
-                            border: circleClass === 'pending' ? '2px solid hsl(var(--border-color))' : 'none',
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center',
-                            color: 'white',
-                            fontWeight: 700,
-                            transition: 'all 0.3s ease',
-                            ...styleGlow
-                          }}
-                          className={circleClass === 'running' ? 'badge-running' : circleClass === 'waiting' ? 'badge-waiting' : ''}
-                        >
-                          {status === 'completed' ? (
-                            <Icons.Check />
-                          ) : status === 'waiting' ? (
-                            '!'
-                          ) : (
-                            idx + 1
-                          )}
+                        <div className="v-step-rail">
+                          <div className={`v-step-node v-step-node--${status === 'in_progress' ? 'running' : status}`}>
+                            {status === 'completed' ? (
+                              <Icons.Check />
+                            ) : status === 'waiting' ? (
+                              '!'
+                            ) : (
+                              idx + 1
+                            )}
+                          </div>
+                          {!isLast && <div className={`v-step-line ${status === 'completed' ? 'v-step-line--done' : ''}`}></div>}
                         </div>
-                        
-                        <span style={{ 
-                          marginTop: '0.75rem', 
-                          fontSize: '0.85rem', 
-                          fontWeight: 600, 
-                          textAlign: 'center',
-                          color: status === 'pending' ? 'hsl(var(--text-secondary))' : 'hsl(var(--text-primary))'
-                        }}>
-                          {step.label}
-                        </span>
-                        
-                        <span style={{ 
-                          fontSize: '0.65rem', 
-                          color: 'hsl(var(--text-secondary))', 
-                          textAlign: 'center',
-                          marginTop: '0.2rem',
-                          lineHeight: 1.2
-                        }}>
-                          {step.desc}
-                        </span>
+                        <div className="v-step-content">
+                          <div className="v-step-label">{step.label}</div>
+                          <div className="v-step-desc">{step.desc}</div>
+                        </div>
                       </div>
                     );
                   })}
                 </div>
-              </div>
-            </div>
 
-            {/* Main Content Area: Changes based on inspected step */}
-            <div className="grid" style={{ gridTemplateColumns: '1fr' }}>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                
-                {!inspectedStep ? (
-                  <div className="glass-panel" style={{ padding: '3rem', textAlign: 'center' }}>
-                    <div style={{ color: 'hsl(var(--primary))', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
-                      <Icons.Info />
+                {/* Step Detail Content */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+
+                  {!inspectedStep ? (
+                    <div className="panel">
+                      <div className="empty-state">
+                        <Icons.Info />
+                        <h4>Select a Pipeline Step</h4>
+                        <p>Click on any step in the timeline to view its detailed outputs.</p>
+                      </div>
                     </div>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Select a Pipeline Step</h3>
-                    <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.9rem' }}>
-                      Click on any step in the timeline above to view its detailed outputs and associated UI.
-                    </p>
-                  </div>
-                ) : (
-                  <>
-                    {/* Tender Summary View */}
-                    {inspectedStep.step_name === 'fetch_tender_summary' && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <Icons.Info /> Tender Summary
-                        </h3>
-                        <TenderSummaryView data={inspectedStep.output} />
-                      </div>
-                    )}
-
-                    {/* Eligibility View */}
-                    {inspectedStep.step_name === 'evaluate_eligibility' && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <div className="flex-between" style={{ marginBottom: '1rem' }}>
-                          <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <Icons.Info /> AI Eligibility Check Summary
-                          </h3>
-                          {(selectedRun?.status === 'failed' || workflowStatus?.status === 'waiting_for_retry') && (
-                            <button 
-                              onClick={handleRetryWorkflow} 
-                              className="btn-primary" 
-                              style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
-                            >
-                              <Icons.Refresh /> Retry Eligibility
-                            </button>
-                          )}
+                  ) : (
+                    <>
+                      {/* Tender Summary View */}
+                      {inspectedStep.step_name === 'fetch_tender_summary' && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <h3><Icons.Info /> Tender Summary</h3>
+                          </div>
+                          <div className="step-panel-body">
+                            <TenderSummaryView data={inspectedStep.output} />
+                          </div>
                         </div>
-                        <EligibilityView data={inspectedStep.output} />
-                      </div>
-                    )}
+                      )}
 
-                    {/* Annexure Listing (Read-only) View */}
-                    {inspectedStep.step_name === 'list_annexures' && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <div style={{ display: 'flex', gap: '1rem', alignItems: 'start', marginBottom: '1.5rem' }}>
-                          <div>
-                            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-                              Discovered Annexure Templates
-                            </h3>
-                            <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem' }}>
+                      {/* Eligibility View */}
+                      {inspectedStep.step_name === 'evaluate_eligibility' && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <h3><Icons.Info /> AI Eligibility Check Summary</h3>
+                            {(selectedRun?.status === 'failed' || workflowStatus?.status === 'waiting_for_retry') && (
+                              <button onClick={handleRetryWorkflow} className="btn-primary" style={{ padding: '0.4rem 0.8rem', fontSize: '0.82rem' }}>
+                                <Icons.Refresh /> Retry
+                              </button>
+                            )}
+                          </div>
+                          <div className="step-panel-body">
+                            <EligibilityView data={inspectedStep.output} />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Annexure Listing View */}
+                      {inspectedStep.step_name === 'list_annexures' && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <h3>Discovered Annexure Templates</h3>
+                          </div>
+                          <div className="step-panel-body">
+                            <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem', marginBottom: '1rem' }}>
                               The following annexure templates were detected in the tender documents.
                             </p>
-                          </div>
-                        </div>
-
-                        <div className="custom-card" style={{ padding: 0 }}>
-                          <div className="table-container" style={{ border: 'none', borderRadius: 0 }}>
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th>Annexure Code</th>
-                                  <th>Description / Title</th>
-                                  <th>Source File</th>
-                                  <th>Page Range</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {(() => {
-                                  const listStep = inspectedStep.output;
-                                  const items = [];
-                                  for (const fileResult of (listStep?.results || [])) {
-                                    for (const temp of (fileResult?.result?.templates || [])) {
-                                      items.push({
-                                        code: temp.annexure_id,
-                                        title: temp.title || temp.description || 'Response template',
-                                        file_path: fileResult.file_path,
-                                        range: `${temp.start_page || 0} - ${temp.end_page || 0}`
-                                      });
-                                    }
-                                  }
-
-                                  if (items.length === 0) {
-                                    return (
-                                      <tr>
-                                        <td colSpan="4" style={{ textAlign: 'center', padding: '2rem' }}>No templates detected in workflow state.</td>
-                                      </tr>
-                                    );
-                                  }
-
-                                  return items.map((item, idx) => (
-                                    <tr key={item.code || idx}>
-                                      <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'hsl(var(--secondary))' }}>{item.code}</td>
-                                      <td>{item.title}</td>
-                                      <td style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>{item.file_path?.split('/').pop()}</td>
-                                      <td>{item.range}</td>
-                                    </tr>
-                                  ));
-                                })()}
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Final Response View */}
-                    {inspectedStep.step_name === 'generate_final_response' && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem' }}>Generated Bid Artifacts</h3>
-                        <FinalResponseView 
-                          run={selectedRun} 
-                          token={token}
-                        />
-                      </div>
-                    )}
-
-                    {/* Template Generation & Selection View */}
-                    {inspectedStep.step_name === 'generate_templates' && (
-                      <div className="glass-panel" style={{ padding: '2rem', border: workflowStatus?.status === 'waiting_for_selection' ? '1px solid hsla(var(--warning), 0.3)' : undefined, boxShadow: workflowStatus?.status === 'waiting_for_selection' ? 'var(--shadow-warning)' : undefined }}>
-                        
-                        {workflowStatus?.status === 'waiting_for_selection' ? (
-                          <>
-                            <div style={{ display: 'flex', gap: '1rem', alignItems: 'start', marginBottom: '1.5rem' }}>
-                              <div style={{ color: 'hsl(var(--warning))', padding: '0.5rem', background: 'hsla(var(--warning), 0.1)', borderRadius: '8px' }}>
-                                <Icons.Warning />
-                              </div>
-                              <div>
-                                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-                                  Template Review & Selection
-                                </h3>
-                                <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem' }}>
-                                  AI has generated the following response templates. Please select which templates you would like to autofill and include in the final bid response.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="custom-card" style={{ padding: 0, marginBottom: '1.5rem' }}>
+                            <div className="custom-card" style={{ padding: 0 }}>
                               <div className="table-container" style={{ border: 'none', borderRadius: 0 }}>
                                 <table>
                                   <thead>
                                     <tr>
-                                      <th style={{ width: '40px' }}>Select</th>
                                       <th>Annexure Code</th>
                                       <th>Description / Title</th>
                                       <th>Source File</th>
                                       <th>Page Range</th>
-                                      <th>Action</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     {(() => {
-                                      const tempStep = workflowStatus?.workflow_state?.template_response || inspectedStep.output;
+                                      const listStep = inspectedStep.output;
                                       const items = [];
-                                      let tempIdx = 0;
-                                      for (const temp of (tempStep?.results || [])) {
-                                        items.push({
-                                          code: temp.annexure_id,
-                                          title: getCleanTitle(temp, tempIdx),
-                                          file_path: temp.file_path,
-                                          range: `${temp.start_page || 0} - ${temp.end_page || 0}`,
-                                          html: temp.html_template
-                                        });
-                                        tempIdx++;
+                                      for (const fileResult of (listStep?.results || [])) {
+                                        for (const temp of (fileResult?.result?.templates || [])) {
+                                          items.push({
+                                            code: temp.annexure_id,
+                                            title: temp.title || temp.description || 'Response template',
+                                            file_path: fileResult.file_path,
+                                            range: `${temp.start_page || 0} - ${temp.end_page || 0}`
+                                          });
+                                        }
                                       }
-
                                       if (items.length === 0) {
-                                        return (
-                                          <tr>
-                                            <td colSpan="6" style={{ textAlign: 'center', padding: '2rem' }}>No templates generated yet.</td>
-                                          </tr>
-                                        );
+                                        return (<tr><td colSpan="4" style={{ textAlign: 'center', padding: '2rem' }}>No templates detected.</td></tr>);
                                       }
-
                                       return items.map((item, idx) => (
-                                        <React.Fragment key={item.code || idx}>
-                                          <tr>
-                                            <td>
-                                              <input 
-                                                type="checkbox" 
-                                                checked={selectedAnnexureIds.includes(item.code)} 
-                                                onChange={(e) => {
-                                                  if (e.target.checked) {
-                                                    setSelectedAnnexureIds([...selectedAnnexureIds, item.code]);
-                                                  } else {
-                                                    setSelectedAnnexureIds(selectedAnnexureIds.filter(id => id !== item.code));
-                                                  }
-                                                }}
-                                                style={{ width: '18px', height: '18px', cursor: 'pointer' }}
-                                              />
-                                            </td>
-                                            <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'hsl(var(--secondary))' }}>{item.code}</td>
-                                            <td>{item.title}</td>
-                                            <td style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>{item.file_path?.split('/').pop()}</td>
-                                            <td>{item.range}</td>
-                                            <td>
-                                              <button
-                                                className="btn-secondary"
-                                                style={{ padding: '0.25rem 0.5rem', fontSize: '0.75rem' }}
-                                                onClick={() => {
-                                                  const newExpanded = { ...expandedTemplates };
-                                                  newExpanded[item.code] = !newExpanded[item.code];
-                                                  setExpandedTemplates(newExpanded);
-                                                }}
-                                              >
-                                                {expandedTemplates[item.code] ? 'Hide Preview' : 'Show Preview'}
-                                              </button>
-                                            </td>
-                                          </tr>
-                                          {expandedTemplates[item.code] && item.html && (
-                                            <tr>
-                                              <td colSpan="6" style={{ padding: '1rem', background: 'hsla(var(--bg-secondary), 0.5)' }}>
-                                                <div className="template-html-preview" style={{ margin: 0, padding: '0.5rem' }}>
-                                                  <div className="template-html-content" style={{ maxHeight: '420px', padding: 0, background: 'transparent', border: 'none' }}>
-                                                    <SafeHtmlPreview html={item.html} maxHeight="400px" />
-                                                  </div>
-                                                </div>
-                                              </td>
-                                            </tr>
-                                          )}
-                                        </React.Fragment>
+                                        <tr key={item.code || idx}>
+                                          <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'hsl(var(--secondary))' }}>{item.code}</td>
+                                          <td>{item.title}</td>
+                                          <td style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>{item.file_path?.split('/').pop()}</td>
+                                          <td>{item.range}</td>
+                                        </tr>
                                       ));
                                     })()}
                                   </tbody>
                                 </table>
                               </div>
                             </div>
-
-                            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'end' }}>
-                              <button 
-                                onClick={() => {
-                                  const tempStep = workflowStatus?.workflow_state?.template_response || inspectedStep.output;
-                                  const codes = (tempStep?.results || []).map(r => r.annexure_id).filter(Boolean);
-                                  setSelectedAnnexureIds(codes);
-                                }} 
-                                className="btn-secondary" 
-                                style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
-                              >
-                                Select All
-                              </button>
-                              <button 
-                                onClick={() => setSelectedAnnexureIds([])} 
-                                className="btn-secondary" 
-                                style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
-                              >
-                                Clear Selection
-                              </button>
-                              <button 
-                                onClick={handleResumePipeline} 
-                                className="btn-primary" 
-                                style={{ padding: '0.5rem 1.5rem', fontSize: '0.85rem', boxShadow: 'var(--shadow-warning)' }}
-                                disabled={submittingHITL}
-                              >
-                                {submittingHITL ? 'Signaling Workflow...' : 'Approve & Resume Pipeline'}
-                              </button>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                              <Icons.FileText /> Annexure Template Generation
-                            </h3>
-                            <TemplateGenerationView data={inspectedStep.output} />
-                          </>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Autofill View */}
-                    {inspectedStep.step_name === 'autofill_template' && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <Icons.FileText /> Auto-filled Templates
-                        </h3>
-                        <AutofillView data={runSteps.filter(s => s.step_name === 'autofill_template').map(s => s.output)} />
-                      </div>
-                    )}
-
-                    {/* Generic Step View for any remaining steps without a dedicated view */}
-                    {!['fetch_tender_summary', 'evaluate_eligibility', 'list_annexures', 'generate_final_response', 'generate_templates', 'autofill_template'].includes(inspectedStep.step_name) && (
-                      <div className="glass-panel" style={{ padding: '2rem' }}>
-                        <div className="flex-between" style={{ borderBottom: '1px solid hsl(var(--border-color))', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
-                          <div>
-                            <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{formatKey(inspectedStep.step_name)}</h3>
-                            <p style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>
-                              Step: <span style={{ fontFamily: 'var(--font-mono)', color: 'hsl(var(--secondary))' }}>{inspectedStep.step_name}</span>
-                              {' · '}
-                              Status: <span className={`badge badge-${inspectedStep.status}`} style={{ fontSize: '0.65rem' }}>{inspectedStep.status}</span>
-                            </p>
                           </div>
                         </div>
-                        {inspectedStep.output && Object.keys(inspectedStep.output).length > 0 ? (
-                          <div className="custom-card">
-                            <div className="summary-container">
-                              {Object.entries(inspectedStep.output).filter(([, v]) => v !== null && v !== undefined && v !== '').map(([key, val]) => (
-                                <div key={key} className="summary-row">
-                                  <span className="summary-label">{formatKey(key)}</span>
-                                  <span className="summary-colon">:</span>
-                                  <SummaryRichValue val={val} />
+                      )}
+
+                      {/* Final Response View */}
+                      {inspectedStep.step_name === 'generate_final_response' && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <h3>Generated Bid Artifacts</h3>
+                          </div>
+                          <div className="step-panel-body">
+                            <FinalResponseView run={selectedRun} token={token} />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Template Generation & Selection View */}
+                      {inspectedStep.step_name === 'generate_templates' && (
+                        <div className="step-panel" style={{ border: workflowStatus?.status === 'waiting_for_selection' ? '1px solid hsla(var(--warning), 0.25)' : undefined }}>
+                          {workflowStatus?.status === 'waiting_for_selection' ? (
+                            <>
+                              <div className="step-panel-header" style={{ borderBottomColor: 'hsla(var(--warning), 0.15)' }}>
+                                <h3><Icons.Warning /> Template Review &amp; Selection</h3>
+                              </div>
+                              <div className="step-panel-body">
+                                <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem', marginBottom: '1.25rem' }}>
+                                  AI has generated the following response templates. Select which templates to autofill and include in the final bid.
+                                </p>
+
+                                <div className="custom-card" style={{ padding: 0, marginBottom: '1.25rem' }}>
+                                  <div className="table-container" style={{ border: 'none', borderRadius: 0 }}>
+                                    <table>
+                                      <thead>
+                                        <tr>
+                                          <th style={{ width: '40px' }}>Select</th>
+                                          <th>Annexure Code</th>
+                                          <th>Description / Title</th>
+                                          <th>Source File</th>
+                                          <th>Page Range</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {(() => {
+                                          const tempStep = workflowStatus?.workflow_state?.template_response || inspectedStep.output;
+                                          const items = [];
+                                          let tempIdx = 0;
+                                          for (const temp of (tempStep?.results || [])) {
+                                            items.push({
+                                              code: temp.annexure_id,
+                                              title: getCleanTitle(temp, tempIdx),
+                                              file_path: temp.file_path,
+                                              range: `${temp.start_page || 0} - ${temp.end_page || 0}`,
+                                              html: temp.html_template
+                                            });
+                                            tempIdx++;
+                                          }
+                                          if (items.length === 0) {
+                                            return (<tr><td colSpan="6" style={{ textAlign: 'center', padding: '2rem' }}>No templates generated yet.</td></tr>);
+                                          }
+                                          return items.map((item, idx) => (
+                                            <React.Fragment key={item.code || idx}>
+                                              <tr>
+                                                <td>
+                                                  <input
+                                                    type="checkbox"
+                                                    checked={selectedAnnexureIds.includes(item.code)}
+                                                    onChange={(e) => {
+                                                      if (e.target.checked) {
+                                                        setSelectedAnnexureIds([...selectedAnnexureIds, item.code]);
+                                                      } else {
+                                                        setSelectedAnnexureIds(selectedAnnexureIds.filter(id => id !== item.code));
+                                                      }
+                                                    }}
+                                                    style={{ width: '18px', height: '18px', cursor: 'pointer' }}
+                                                  />
+                                                </td>
+                                                <td style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'hsl(var(--secondary))' }}>{item.code}</td>
+                                                <td>{item.title}</td>
+                                                <td style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>{item.file_path?.split('/').pop()}</td>
+                                                <td>{item.range}</td>
+                                                <td>
+                                                  <button className="btn-ghost" style={{ padding: '0.2rem 0.5rem', fontSize: '0.75rem' }}
+                                                    onClick={() => {
+                                                      const newExpanded = { ...expandedTemplates };
+                                                      newExpanded[item.code] = !newExpanded[item.code];
+                                                      setExpandedTemplates(newExpanded);
+                                                    }}
+                                                  >
+                                                    {expandedTemplates[item.code] ? 'Hide' : 'Preview'}
+                                                  </button>
+                                                </td>
+                                              </tr>
+                                              {expandedTemplates[item.code] && item.html && (
+                                                <tr>
+                                                  <td colSpan="6" style={{ padding: '1rem' }}>
+                                                    <div className="template-html-preview" style={{ margin: 0, padding: '0.5rem' }}>
+                                                      <div className="template-html-content" style={{ maxHeight: '420px', padding: 0, background: 'transparent', border: 'none' }}>
+                                                        <SafeHtmlPreview html={item.html} maxHeight="400px" />
+                                                      </div>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              )}
+                                            </React.Fragment>
+                                          ));
+                                        })()}
+                                      </tbody>
+                                    </table>
+                                  </div>
                                 </div>
-                              ))}
+
+                                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+                                  <button
+                                    onClick={() => {
+                                      const tempStep = workflowStatus?.workflow_state?.template_response || inspectedStep.output;
+                                      const codes = (tempStep?.results || []).map(r => r.annexure_id).filter(Boolean);
+                                      setSelectedAnnexureIds(codes);
+                                    }}
+                                    className="btn-secondary"
+                                    style={{ padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                                  >
+                                    Select All
+                                  </button>
+                                  <button onClick={() => setSelectedAnnexureIds([])} className="btn-secondary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}>
+                                    Clear
+                                  </button>
+                                  <button
+                                    onClick={handleResumePipeline}
+                                    className="btn-primary"
+                                    style={{ padding: '0.45rem 1.2rem', fontSize: '0.82rem' }}
+                                    disabled={submittingHITL}
+                                  >
+                                    {submittingHITL ? 'Signaling...' : 'Approve & Resume'}
+                                  </button>
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <div className="step-panel-header">
+                                <h3><Icons.FileText /> Annexure Template Generation</h3>
+                              </div>
+                              <div className="step-panel-body">
+                                <TemplateGenerationView data={inspectedStep.output} />
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Autofill View */}
+                      {inspectedStep.step_name === 'autofill_template' && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <h3><Icons.FileText /> Auto-filled Templates</h3>
+                          </div>
+                          <div className="step-panel-body">
+                            <AutofillView data={runSteps.filter(s => s.step_name === 'autofill_template').map(s => s.output)} />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Generic Step View */}
+                      {!['fetch_tender_summary', 'evaluate_eligibility', 'list_annexures', 'generate_final_response', 'generate_templates', 'autofill_template'].includes(inspectedStep.step_name) && (
+                        <div className="step-panel">
+                          <div className="step-panel-header">
+                            <div>
+                              <h3>{formatKey(inspectedStep.step_name)}</h3>
+                              <p style={{ fontSize: '0.75rem', color: 'hsl(var(--text-muted))' }}>
+                                Step: <span style={{ fontFamily: 'var(--font-mono)', color: 'hsl(var(--secondary))' }}>{inspectedStep.step_name}</span>
+                                {' · '}Status: <span className={`badge badge-${inspectedStep.status}`} style={{ fontSize: '0.6rem' }}>{inspectedStep.status}</span>
+                              </p>
                             </div>
                           </div>
-                        ) : (
-                          <p style={{ color: 'hsl(var(--text-muted))', fontStyle: 'italic' }}>No output data recorded for this step.</p>
-                        )}
+                          <div className="step-panel-body">
+                            {inspectedStep.output && Object.keys(inspectedStep.output).length > 0 ? (
+                              <div className="custom-card">
+                                <div className="summary-container">
+                                  {Object.entries(inspectedStep.output).filter(([, v]) => v !== null && v !== undefined && v !== '').map(([key, val]) => (
+                                    <div key={key} className="summary-row">
+                                      <span className="summary-label">{formatKey(key)}</span>
+                                      <span className="summary-colon">:</span>
+                                      <SummaryRichValue val={val} />
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : (
+                              <p style={{ color: 'hsl(var(--text-muted))', fontStyle: 'italic' }}>No output data recorded for this step.</p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* Error display */}
+                  {inspectedStep?.error && Object.keys(inspectedStep.error).length > 0 && (
+                    <div className="panel" style={{ borderColor: 'hsla(var(--danger), 0.2)' }}>
+                      <div className="panel-body">
+                        <strong style={{ color: 'hsl(var(--danger))', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                          <Icons.Warning /> Error Details
+                        </strong>
+                        <div style={{
+                          background: 'hsla(var(--danger), 0.04)', borderRadius: '8px',
+                          padding: '0.85rem 1rem', border: '1px solid hsla(var(--danger), 0.12)',
+                          fontSize: '0.83rem', color: 'hsl(var(--danger))', lineHeight: 1.6
+                        }}>
+                          {typeof inspectedStep.error === 'string'
+                            ? inspectedStep.error
+                            : inspectedStep.error.message || inspectedStep.error.detail || JSON.stringify(inspectedStep.error)}
+                        </div>
                       </div>
-                    )}
-                  </>
-                )}
-              </div>
+                    </div>
+                  )}
 
-              {/* Error display below the main content */}
-              {inspectedStep?.error && Object.keys(inspectedStep.error).length > 0 && (
-                <div className="glass-panel" style={{ padding: '1.5rem' }}>
-                  <strong style={{ color: 'hsl(var(--danger))', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                    <Icons.Warning /> Error Details
-                  </strong>
-                  <div style={{
-                    background: 'hsla(var(--danger), 0.05)', borderRadius: '8px',
-                    padding: '0.85rem 1rem', border: '1px solid hsla(var(--danger), 0.2)',
-                    fontSize: '0.83rem', color: 'hsl(var(--danger))', lineHeight: 1.6
-                  }}>
-                    {typeof inspectedStep.error === 'string'
-                      ? inspectedStep.error
-                      : inspectedStep.error.message || inspectedStep.error.detail || JSON.stringify(inspectedStep.error)}
-                  </div>
                 </div>
-              )}
+              </div>
+            </>
+          )}
 
-            </div>
-
-          </div>
-        )}
-      </main>
+        </div>
+      </div>
     </div>
   );
 }
